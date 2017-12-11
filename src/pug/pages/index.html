@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Сайт портфолио</title>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <header class="page-header">
+        <a class="header__auth auth" href="#">Авторизоваться</a>
+      </header>
+      <section class="hero">
+        <h1 class="visually-hidden">Главная страница</h1>
+        <div class="hero__picture">
+          <img class="hero__image" src="../img/me-mobile@1x.jpg" alt="Андрей Иванов" width="140" height="180">
+        </div>
+        <h2 class="hero__title">
+          Андрей Иванов
+          <span class="hero__description">Личный сайт веб разработчика</span>
+        </h2>
+        <div class="hero__socials socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link" href="https://vk.com/id15900582">
+                <span class="visually-hidden">Вконтакте</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="https://github.com/DivoDivnoe">
+                <span class="visually-hidden">Гитхаб</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <span class="visually-hidden">Инстаграм</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="works.html">Мои работы</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="about.html">Обо мне</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="blog.html">Блог</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="auth">
+        <h2 class="auth__title">Авторизуйтесь</h2>
+        <form action="#">
+          <input class="auth__field" type="text" name="login" placeholder="Логин">
+          <input class="auth__field" type="text" name="password" placeholder="Пароль">
+          <label class="auth__capture-label">
+            <input class="auth__capture" type="checkbox" name="human" value="yes">
+            Я человек
+          </label>
+          <div class="auth__confirm--wrapper">
+            <h3 class="auth__confirm-title">
+              Вы точно не робот?
+            </h3>
+            <label class="auth__confirm-label">
+              <input class="auth__confirm" type="radio" name="not-robot" value="yes">
+              Да
+            </label>
+            <label class="auth__confirm-label">
+              <input class="auth__confirm" type="radio" name="not-robot" value="no">
+              Не уверен
+            </label>
+          </div>
+          <div class="auth__menu">
+            <a class="auth__menu-item" href="#">На главную</a>
+            <button class="auth__menu-item auth__menu-item--submit" type="submit">Войти</a>
+          </div>
+        </form>
+      </section>
+      <footer class="page-footer">
+        <span class="page-footer__item page-footer__item--name">© Владимир Астахов</span>
+        <span class="page-footer__item page-footer__item--description">создано с любовью в LoftSchool</span>
+        <span class="page-footer__item page-footer__item--year">2017</span>
+      </footer>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
