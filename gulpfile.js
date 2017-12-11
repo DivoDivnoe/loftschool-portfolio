@@ -74,14 +74,14 @@ gulp.task('scss', () => {
         })
       })
     )
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(sourcemaps.write())
     .pipe(
       stylelint({
         reporters: [{formatter: 'string', console: true}]
       })
     )
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write())
     .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
     .pipe(gulp.dest('build/css'))
     .pipe(csso())
