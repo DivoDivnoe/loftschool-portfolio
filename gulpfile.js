@@ -21,8 +21,8 @@ const webpackConfig = require('./webpack.config');
 const paths = {
   root: 'build',
   pug: {
-    pages: 'src/pug/pages/*.html', // временно использую html файлы вместо pug
-    src: 'src/pug/**/*.html'
+    pages: 'src/pug/pages/*.pug',
+    src: 'src/pug/**/*.pug'
   },
   scss: {
     src: 'src/scss/**/*.scss',
@@ -90,12 +90,10 @@ gulp.task('scss', () => {
 });
 
 gulp.task('pug', () => {
-  return (
-    gulp
-      .src(paths.pug.pages)
-      //.pipe(pug({pretty: true})) // временно отключил, пока не начал использовать pug
-      .pipe(gulp.dest(paths.root))
-  );
+  return gulp
+    .src(paths.pug.pages)
+    .pipe(pug({pretty: true}))
+    .pipe(gulp.dest(paths.root));
 });
 
 gulp.task('js', () => {
