@@ -2,18 +2,7 @@ extends ../_template
 
 block variables
   - var title = "Сайт портфолио";
-  - var welcomeMenu = [
-    {
-      title: "Мои работы",
-      link: "works.html"
-    }, {
-      title: "Обо мне",
-      link: "about.html"
-    }, {
-      title: "Блог",
-      link: "blog.html"
-    }
-  ];
+  - var welcomeMenu = [{title: "Мои работы",link: "works.html"}, {title: "Обо мне",link: "about.html"}, {title: "Блог",link: "blog.html"}];
 
 block content
   section.welcome
@@ -31,15 +20,9 @@ block content
       +socials('socials__list')
       nav.main-nav
         each item in welcomeMenu
-        ul.main-nav__list
-          li.main-nav__item
-            a.main-nav__link(href=welcomeMenu.link) #{welcomeMenu.title}
-        ul.main-nav__list
-          li.main-nav__item
-            a.main-nav__link(href=welcomeMenu.link) #{welcomeMenu.title}
-        ul.main-nav__list
-          li.main-nav__item
-            a.main-nav__link(href=welcomeMenu.link) #{welcomeMenu.title}
+          ul.main-nav__list
+            li.main-nav__item
+              a.main-nav__link(href=item.link) #{item.title}
 
   section.auth
     h2.auth__title Авторизуйтесь
@@ -48,15 +31,16 @@ block content
         input.auth__field(type="text", name="login", placeholder="Логин")
         input.auth__field(type="text", name="password", placeholder="Пароль")
         label.auth__capture-label
-          input.auth__capture(type="checkbox", name="human", value="yes") Я человек
+          input.auth__capture(type="checkbox", name="human", value="yes")
+          |Я человек
         .auth__confirm--wrapper
           h3.auth__confirm-title Вы точно не робот?
           label.auth__confirm-label
-            input.auth__confirm(type="radio", name="not-robot", value="yes") Да
+            input.auth__confirm(type="radio", name="not-robot", value="yes")
+            |Да
           label.auth__confirm-label
-            input.auth__confirm(type="radio", name="not-robot", value="no") Не уверен
+            input.auth__confirm(type="radio", name="not-robot", value="no")
+            |Не уверен
         .auth__menu
           a.auth__menu-item(href="#") На главную
           button.auth__menu-item.auth__menu-item--submit(type="submit") Войти
-
-

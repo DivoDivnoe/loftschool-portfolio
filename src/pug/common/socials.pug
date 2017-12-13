@@ -1,19 +1,14 @@
 mixin socials(className)
+  - var links = {vk: "https://vk.com/id15900582", github: "https://github.com/DivoDivnoe", instagram: "#"};
 
-- var links = {
-    vk: "https://vk.com/id15900582",
-    github: "https://github.com/DivoDivnoe",
-    instagram: "#"
-  };
-
-div(class=className + " socials")
-  ul.socials__list
-    li.socials__item
-      a.socials__link(href=links.vk)
-        span.visually-hidden Вконтакте
-    li.socials__item
-      a.socials__link(href=links.github)
-        span.visually-hidden Гитхаб
-    li.socials__item
-      a.socials__link(href=links.instagram)
-        span.visually-hidden Инстаграм
+  div(class=className + " socials")
+    ul.socials__list
+      li.socials__item
+        a.socials__link(href=links.vk)
+          span.visually-hidden Вконтакте
+      li.socials__item
+        a.socials__link(href=links.github)
+          span.visually-hidden Гитхаб
+      li.socials__item
+        a.socials__link(href=links.instagram)
+          span.visually-hidden Инстаграм
