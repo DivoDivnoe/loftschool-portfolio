@@ -1,0 +1,16 @@
+mixin skillsItem(obj)
+  div.skills__item
+    h4.skills__title= obj.title
+    ul.skills__list
+      each skill in obj.skills
+        li.skills__item= skill
+
+- var frontend = {title: "Frontend", skills: ["HTML5", "CSS3", "Javascript"]};
+- var backend = {title: "Backend", skills: ["PHP", "Mysql", "Node.js & npm", "Mongo.db"]};
+- var workflow = {title: "Workflow", skills: ["Git", "Gulp", "Bower"]};
+
+mixin skills(className)
+  div(class=className + " skills")
+    +skillsItem(frontend)
+    +skillsItem(backend)
+    +skillsItem(workflow)
