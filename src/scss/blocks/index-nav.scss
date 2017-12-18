@@ -1,0 +1,19 @@
+.index-nav {
+  width: 100%;
+  min-height: 45px;
+}
+
+.index-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.index-nav__item {
+  &:not(:last-child) {
+    border-right: 2px solid rgba(#dee3e7, 0.5);
+  }
+
+  &--blog {
+    flex-grow: 1;
+  }
+}

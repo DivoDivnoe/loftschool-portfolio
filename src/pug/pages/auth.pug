@@ -1,0 +1,42 @@
+extends ../_template
+
+block variables
+  - var title = "Сайт портфолио";
+
+block content
+  section.auth
+    .container.auth__wrapper
+      .auth__form
+        h2.auth__title Авторизуйтесь
+        form(action="#")
+          .auth__field-wrapper
+            input.auth__field(type="text", id="login", name="login", placeholder="Логин")
+            label.auth__field-picture(for="login")
+              svg.auth__field-icon(fill="#c4cbcd", width="14", height="15")
+                use(xlink:href="img/sprite.svg#icon-login")
+          .auth__field-wrapper
+            input.auth__field(type="text", id="password" name="password", placeholder="Пароль")
+            label.auth__field-picture(for="password")
+              svg.auth__field-icon(fill="#c4cbcd", width="17", height="16")
+                use(xlink:href="img/sprite.svg#icon-password")
+          .auth__capture-wrapper
+            input.auth__capture(type="checkbox", id="human", name="human", value="yes")
+            label.auth__capture-label(for="human")
+              //svg.auth__capture-icon(fill="#ffffff", width="18", height="14")
+                //use(xlink:href="img/sprite.svg#icon-check")
+              |Я человек
+          .auth__confirm-wrapper
+            h3.auth__confirm-title Вы точно не робот?
+            .auth__confirm-controls
+              .auth__confirm-item
+                input.auth__confirm(type="radio", id="is-robot", name="not-robot", value="yes", checked)
+                label.auth__confirm-label(for="is-robot") Да
+              .auth__confirm-item
+                input.auth__confirm(type="radio", id="not-robot", name="not-robot", value="no")
+                label.auth__confirm-label(for="not-robot") Не уверен
+          .auth__menu
+            a.auth__menu-item.button(href="index.html") На главную
+            button.auth__menu-item.auth__menu-item--submit.button(type="submit") Войти
+      footer.index-footer
+        include ../common/copyright
+        +copyright("index-footer__copyright")

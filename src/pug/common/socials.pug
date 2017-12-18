@@ -6,9 +6,15 @@ mixin socials(className)
       li.socials__item
         a.socials__link(href=links.vk)
           span.visually-hidden Вконтакте
+          svg.socials__icon.socials__icon--vk(fill="#ffffff")
+            use(xlink:href="img/sprite.svg#icon-vk")
       li.socials__item
         a.socials__link(href=links.github)
           span.visually-hidden Гитхаб
+          svg.socials__icon.socials__icon--github(fill="#ffffff")
+            use(xlink:href="img/sprite.svg#icon-github")
       li.socials__item
         a.socials__link(href=links.instagram)
           span.visually-hidden Инстаграм
+          svg.socials__icon.socials__icon--instagram(fill="#ffffff")
+            use(xlink:href="img/sprite.svg#icon-in")

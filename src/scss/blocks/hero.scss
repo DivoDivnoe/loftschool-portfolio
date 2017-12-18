@@ -1,0 +1,35 @@
+.hero {
+  height: 568px; //100vh;
+  background: #13315f url('../img/night-bg-mobile@1x.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.hero__picture {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 70px auto 20px auto;
+  overflow: hidden;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__name {
+  margin: 0 0 4px 0;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: calc(42 / 35);
+  font-family: 'Sansus Webissimo';
+  text-transform: uppercase;
+}
+
+.hero__title-name {
+  margin: 4px 0;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: calc(28 / 21);
+}

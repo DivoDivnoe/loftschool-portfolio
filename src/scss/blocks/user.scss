@@ -1,0 +1,35 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  background-color: rgba(#1c1f29, 0.5);
+}
+
+.user__picture {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user__title {
+  margin-top: 22px;
+  margin-bottom: 36px;
+}
+
+.user__title-item {
+  display: block;
+  text-align: center;
+
+  &--name {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: calc(28 / 21);
+  }
+}
+
+.user__socials {
+  margin-bottom: 40px;
+}

@@ -1,13 +1,18 @@
-section.hero
-  .container
-    header.hero__header.header
-      include ../common/socials
-      +socials("header__socials")
-      nav.main-nav
-        button.main-nav__toggle
-          span.visually-hidden Главное меню
-      .user__picture
-        img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
-      .user__title
-        span.user__name Андрей Иванов
-        span.user__description Личный сайт веб разработчика
+mixin hero(page)
+  section.hero
+    .container.hero__wrapper
+      header.hero__header.header
+        include ../common/socials
+        +socials("header__socials")
+        nav.main-nav
+          button.main-nav__toggle
+            span.visually-hidden Главное меню
+      .hero__picture
+        img.hero__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+      .hero__title
+        if page
+          h2.hero__name #{page.title}
+          span.hero__description #{page.text}
+        else 
+          h2.hero__title-name Андрей Иванов
+          span.hero__title-description Личный сайт веб разработчика

@@ -8,6 +8,7 @@ const pug = require('gulp-pug');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const svgstore = require('gulp-svgstore');
+const inject = require('gulp-inject');
 const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
@@ -51,7 +52,15 @@ gulp.task('copy-img', () => {
       imagemin([
         imagemin.jpegtran({progressive: true}),
         imagemin.optipng({optimizationLevel: 3}),
-        imagemin.svgo()
+        imagemin.svgo({
+          plugins: [
+            {
+              removeAttrs: {
+                attrs: 'path:fill'
+              }
+            }
+          ]
+        })
       ])
     )
     .pipe(gulp.dest(paths.img.dest));
@@ -80,7 +89,11 @@ gulp.task('scss', () => {
       })
     )
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(
+      sass({
+        includePaths: require('node-normalize-scss').includePaths
+      })
+    )
     .pipe(sourcemaps.write())
     .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
     .pipe(gulp.dest('build/css'))
@@ -115,7 +128,7 @@ gulp.task('js', () => {
 
 gulp.task('sprite', () => {
   return gulp
-    .src('build/img/icon-*.svg')
+    .src('build/img/icons/icon-*.svg')
     .pipe(svgstore({inlineSvg: true}))
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(paths.img.dest));
@@ -124,7 +137,7 @@ gulp.task('sprite', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.pug.src, gulp.series('pug'));
   gulp.watch(paths.scss.src, gulp.series('scss'));
-  gulp.watch(paths.img.src, gulp.series('copy-img'));
+  gulp.watch(paths.img.src, gulp.series('copy-img', 'sprite'));
   gulp.watch(paths.js.src, gulp.series('js'));
 });
 
@@ -140,7 +153,7 @@ gulp.task(
   gulp.series(
     'clean',
     gulp.parallel(
-      gulp.series('copy-img', 'sprite'),
+      gulp.series(gulp.parallel('copy-img', 'pug'), 'sprite'),
       'copy-fonts',
       'scss',
       'pug',

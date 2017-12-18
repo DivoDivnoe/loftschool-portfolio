@@ -1,0 +1,43 @@
+.socials__list {
+  display: flex;
+  align-self: center;
+}
+
+.socials__item {
+  display: flex;
+  align-items: center;
+  width: 31px;
+
+  &:not(:last-child) {
+    margin-right: 27px;
+  }
+}
+
+.socials__link {
+  overflow: hidden;
+
+  &:hover {
+    .socials__icon {
+      fill: $darkBlue;
+    }
+  }
+}
+
+.socials__icon {
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+
+  &:hover {
+    fill: $darkBlue;
+  }
+
+  &--vk {
+    height: 17px;
+  }
+
+  &--github,
+  &--instagram {
+    height: 22px;
+  }
+}

@@ -1,24 +1,72 @@
 extends ../_template
 
 block variables
+  - 
+    var skillAreas = [
+      {
+        title: "Frontend", 
+        skills: ["HTML5", "CSS3", "Javascript"]
+      }, {
+        title: "Backend", 
+        skills: ["PHP", "Mysql", "Node.js & npm", "Mongo.db"]
+      },  {
+        title: "Workflow", 
+        skills: ["Git", "Gulp", "Bower"]
+      }
+    ];
+
+    var contacts = {
+      skype: "pilot297",
+      mailto: "andrey-tm203@mail.ru",
+      tel: "+79213288085",
+      address: "г. Гатчина, ул. Чехова, 22"
+    }
+
+    var contactsTitles = Object.keys(contacts);
+
 block content
   include ../common/hero
+  +hero()
   main.page-main
     section.about
       h2.about__title.title Обо мне
-      .about__picture
+      figure.about__picture
+
       article.about__item
-        h3.about__item-title Кто я
-        .about__item-text
-          p Я веб разработчик из города Гатчина, Ленинградская область. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений.
-            |Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования
-            |LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .container
+          h3.about__item-title Кто я
+          .about__item-text
+            p Я веб разработчик из города Гатчина, Ленинградская область. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений.
+              |Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования
+              |LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
       article.about__item
-        h3.about__item-title Чем я могу быть вам полезен
-        .about__item-text
-          p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте 
-            |по порядку.
-        include ../common/skills
-        +skills("about-item__skills")
+        .container
+          h3.about__item-title Чем я могу быть вам полезен
+          .about__item-text
+            p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте 
+              |по порядку.
+          div.about-item__skills
+            each skillArea in skillAreas
+              div.skills__item
+                h4.skills__title= skillArea.title
+                ul.skills__list
+                  each skill in skillArea.skills
+                    li.skills__item
+                      .skill
+                        span.skill__title #{skill}
+                        svg.skill__circle
     section.contacts
-      h2.contacts__title.title Контакты
+      .contacts__box
+        h2.contacts__title.title Контакты
+        ul.contacts__list
+          each title in contactsTitles
+            li.contacts__item
+              if title === "address"
+                svg.contacts__icon
+                |#{contacts[title]}
+              else
+                a.contacts__link(href=`${title}:${contacts[title]}`)
+                  svg.contacts__icon
+                  |#{contacts[title]}
+      .contacts__map
+  include ../common/footer

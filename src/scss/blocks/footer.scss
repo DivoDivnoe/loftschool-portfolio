@@ -1,0 +1,41 @@
+.footer {
+  font-weight: 300;
+  background-color: rgba(#1c1f29, 0.85);
+}
+
+.footer__main {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__item {
+  padding: 13px 0;
+  text-align: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(#ffffff, 0.2);
+  }
+
+  &--links {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer__socials {
+  margin: 0 auto 5px auto;
+}
+
+.footer__menu {
+  margin-bottom: 13px;
+}
+
+.footer__menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer__copyright {
+  background-color: $blue;
+}
