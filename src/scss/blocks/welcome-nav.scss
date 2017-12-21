@@ -1,0 +1,28 @@
+.welcome-nav {
+  width: 100%;
+  min-height: 45px;
+}
+
+.welcome-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.welcome-nav__item {
+  display: flex;
+
+  &:not(:nth-child(3n)) {
+    border-right: 2px solid rgba(#dee3e7, 0.5);
+  }
+
+  &:nth-child(3n) {
+    flex-grow: 1;
+  }
+}
+
+.welcome-nav__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}

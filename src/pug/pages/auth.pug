@@ -21,10 +21,7 @@ block content
                 use(xlink:href="img/sprite.svg#icon-password")
           .auth__capture-wrapper
             input.auth__capture(type="checkbox", id="human", name="human", value="yes")
-            label.auth__capture-label(for="human")
-              //svg.auth__capture-icon(fill="#ffffff", width="18", height="14")
-                //use(xlink:href="img/sprite.svg#icon-check")
-              |Я человек
+            label.auth__capture-label(for="human") Я человек
           .auth__confirm-wrapper
             h3.auth__confirm-title Вы точно не робот?
             .auth__confirm-controls
@@ -37,6 +34,6 @@ block content
           .auth__menu
             a.auth__menu-item.button(href="index.html") На главную
             button.auth__menu-item.auth__menu-item--submit.button(type="submit") Войти
-      footer.index-footer
+      footer.auth-footer
         include ../common/copyright
         +copyright("index-footer__copyright")

@@ -2,27 +2,22 @@ extends ../_template
 
 block variables
   - 
-    var page = {
-      title: "Андрей Иванов",
-      text: "Личный сайт веб разработчика"
-    };
-
     var slider = [
       {
         title: "Сайт школы онлайн образования",
-        img: "img/portfolio-item1-mobile@1x.jpg",
+        img: "img/portfolio-item-mobile@1x.png",
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
       },
       {
         title: "Сайт школы онлайн образования",
-        img: "img/portfolio-item1-mobile@1x.jpg",
+        img: "img/portfolio-item-mobile@1x.png",
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
       },
       {
         title: "Сайт школы онлайн образования",
-        img: "img/portfolio-item1-mobile@1x.jpg",
+        img: "img/portfolio-item-mobile@1x.png",
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
       }
@@ -49,12 +44,18 @@ block variables
       }
     ];
 
+    var page = {
+      title: "Мои работы"
+    };
+
 block content
   include ../common/hero
   +hero(page)
   main.page-main
     section.portfolio
-      h2.portfolio__title Мои работы
+      include ../common/triangles
+      +triangles("portfolio__triangles")
+      h2.portfolio__title.title Мои работы
       .portfolio__slider.slider
         ul.slider__list
           each item in slider
@@ -62,33 +63,41 @@ block content
               .slider__picture
                 img.slider__image(src=`${item.img}`, alt=`${item.title}`, width="248", height="160")
               .slider__content
-                .slider__title #{item.title}
+                h3.slider__title.title.title--small.title--underlined #{item.title}
                 .slider__skills #{item.skills.join(", ")}
-                a.slider__link Посмотреть сайт
+              a.slider__link.button(href=`${item.link}`) Посмотреть сайт
       .portfolio__toggles
         button.portfolio__toggles-item.portfolio__toggles-item--next
+          svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
+            use(xlink:href="img/sprite.svg#icon-portf_arrow_down")
         button.portfolio__toggles-item.portfolio__toggles-item--previous
+          svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
+            use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
     section.reviews
-      h2.reviews__title Что обо мне говорят
-      each item in reviews
-        article.reviews__item
-          .reviews__picture
-            picture
-              source(media="(min-width: 768px)" srcset=`${item.img.tablet}`)
-              img.reviews__image(src=`${item.img.mobile}`, alt=`${item.name}`)
-          .reviews__text
+      .container.reviews__wrapper
+        h2.reviews__title.title Что обо мне говорят
+        each item in reviews
+          article.reviews__item
+            .reviews__picture
+              picture
+                source(media="(min-width: 768px)" srcset=`${item.img.tablet}`)
+                img.reviews__image(src=`${item.img.mobile}`, alt=`${item.name}`)
             p #{item.text}
-          .reviews__author
-            span.reviews__name #{item.name}
-            span.reviews__profession #{item.profession}
-      .reviews__contact-form.contact-form
-        h3.contact-form__title Связаться со мной
-        form(action="#")
-          .contact-form__fields
-            input.contact-form__field(type="text" name="name" required)
-            input.contact-form__field(type="email" name="email" required)
-            textarea.contact-form__message(name="message" required)
-          .contact-form__buttons
-            button.contact-form__button(type="submit") Отправить
-            button.contact-form__button(type="reset") Очистить
+            cite
+              b #{item.name}
+              | #{item.profession}
+        .reviews__contact-form.contact-form
+          h2.contact-form__title.title.title--small.title--underlined Связаться со мной
+          form(action="#")
+            .contact-form__fields
+              input.contact-form__field(type="text" name="name" placeholder="Имя" required)
+              input.contact-form__field(type="email" name="email" placeholder="Email" required)
+              textarea.contact-form__message(name="message" placeholder="Ваше сообщение" required)
+            .contact-form__buttons
+              button.contact-form__button.button(type="submit") Отправить
+              button.contact-form__button.contact-form__button--reset.button(type="reset") Очистить
+        .reviews__arrow-wrapper
+          button.reviews__arrow
+            svg.reviews__arrow-icon(fill="#ffffff", width="26", height="16")
+              use(xlink:href="img/sprite.svg#icon-arrow_down")
   include ../common/footer

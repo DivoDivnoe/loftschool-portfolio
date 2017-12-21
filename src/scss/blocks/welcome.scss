@@ -18,19 +18,19 @@
 }
 
 .welcome-header__auth {
-  padding: 11px 19px;
+  padding: 7px 19px;
   font-weight: 500;
   border: 1px solid white;
   transition: background-color 0.3s;
 
   &:hover {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     background-color: $blue-hover;
     border: none;
   }
 }
 
-.index-footer {
+.welcome-footer {
   margin-top: auto;
 }

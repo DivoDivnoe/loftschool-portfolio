@@ -13,7 +13,7 @@ html::after {
 html,
 body {
   min-width: 320px;
-  height: 100vh;
+  height: 100%;
 }
 
 body {
@@ -48,7 +48,10 @@ img {
 }
 
 .page-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 320px;
+  height: 100%;
   margin: 0 auto;
 }
 

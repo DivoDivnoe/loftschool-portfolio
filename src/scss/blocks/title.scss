@@ -1,0 +1,29 @@
+.title {
+  font-weight: normal;
+  font-size: 35px;
+  line-height: calc(42 / 35);
+  font-family: 'Sansus Webissimo', 'Arial', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+
+  &--small {
+    font-size: 21px;
+    line-height: calc(28 / 21);
+  }
+
+  &--underlined {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      width: 56px;
+      height: 3px;
+      background-color: #474b57;
+      transform: translateX(-50%);
+    }
+  }
+}

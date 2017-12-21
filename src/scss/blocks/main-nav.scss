@@ -1,8 +1,97 @@
 .main-nav__toggle {
   width: 26px;
   height: 23px;
-  background: transparent url('../img/icons/hamburger.svg') no-repeat center;
+  background: transparent url('../img/svg/hamburger.svg') no-repeat center;
   background-size: cover;
   border: none;
+  opacity: 0.7;
   cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.main-nav__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#253468, 0.87);
+  z-index: 1000;
+
+  &--opened {
+    display: block;
+  }
+
+  &--closed {
+    display: none;
+  }
+}
+
+.main-nav__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.main-nav__menu-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    height: 35px;
+    width: 3px;
+    background-color: #ffffff;
+    transform-origin: center center;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+.main-nav__item {
+  margin-bottom: 25px;
+
+  .main-nav__link--active {
+    color: #ffffff;
+
+    &::after {
+      background-color: #ffffff;
+      transition: 0.3s;
+    }
+  }
+}
+
+.main-nav__link {
+  display: block;
+  padding-bottom: 16px;
+  color: rgba(#ffffff, 0.7);
+  transition: 0.3s;
+
+  &:hover {
+    color: #ffffff;
+  }
 }

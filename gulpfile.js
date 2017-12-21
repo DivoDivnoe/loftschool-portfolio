@@ -30,7 +30,7 @@ const paths = {
     dest: 'build/css'
   },
   img: {
-    src: 'src/img/**/*.{png,jpg,svg}',
+    src: 'src/img/pics/**/*.{png,jpg,svg}',
     dest: 'build/img'
   },
   fonts: {
@@ -52,15 +52,7 @@ gulp.task('copy-img', () => {
       imagemin([
         imagemin.jpegtran({progressive: true}),
         imagemin.optipng({optimizationLevel: 3}),
-        imagemin.svgo({
-          plugins: [
-            {
-              removeAttrs: {
-                attrs: 'path:fill'
-              }
-            }
-          ]
-        })
+        imagemin.svgo()
       ])
     )
     .pipe(gulp.dest(paths.img.dest));
@@ -128,7 +120,21 @@ gulp.task('js', () => {
 
 gulp.task('sprite', () => {
   return gulp
-    .src('build/img/icons/icon-*.svg')
+    .src('src/img/icons/icon-*.svg')
+    .pipe(
+      imagemin([
+        imagemin.svgo({
+          plugins: [
+            {
+              removeAttrs: {
+                attrs: ['path:fill', 'g:fill']
+              },
+              removeEditorsNSData: true
+            }
+          ]
+        })
+      ])
+    )
     .pipe(svgstore({inlineSvg: true}))
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(paths.img.dest));
@@ -152,13 +158,7 @@ gulp.task(
   'default',
   gulp.series(
     'clean',
-    gulp.parallel(
-      gulp.series(gulp.parallel('copy-img', 'pug'), 'sprite'),
-      'copy-fonts',
-      'scss',
-      'pug',
-      'js'
-    ),
+    gulp.parallel('copy-img', 'sprite', 'copy-fonts', 'scss', 'pug', 'js'),
     gulp.parallel('watch', 'serve')
   )
 );

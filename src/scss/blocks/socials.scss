@@ -26,18 +26,10 @@
 .socials__icon {
   display: flex;
   align-items: center;
+  fill: rgba(#ffffff, 0.5);
   transition: 0.3s;
 
   &:hover {
     fill: $darkBlue;
-  }
-
-  &--vk {
-    height: 17px;
-  }
-
-  &--github,
-  &--instagram {
-    height: 22px;
   }
 }

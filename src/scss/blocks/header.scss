@@ -4,3 +4,11 @@
   align-items: center;
   padding: 10px 0;
 }
+
+.header__socials {
+  .socials__item {
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+  }
+}

@@ -35,11 +35,11 @@ block content
           span.user__title-item.user__title-item--description Личный сайт веб разработчика
         include ../common/socials
         +socials('user__socials')
-        nav.index-nav
-          ul.index-nav__list
+        nav.welcome-nav
+          ul.welcome-nav__list
             each item in welcomeMenu
-              li(class=`index-nav__item index-nav__item--${item.mod}`)
-                a.index-nav__link.button(href=item.link) #{item.title}
-      footer.index-footer
+              li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
+                a.welcome-nav__link.button(href=item.link) #{item.title}
+      footer.welcome-footer
         include ../common/copyright
         +copyright("index-footer__copyright")
