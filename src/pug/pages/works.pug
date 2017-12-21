@@ -1,0 +1,103 @@
+extends ../_template
+
+block variables
+  - 
+    var slider = [
+      {
+        title: "Сайт школы онлайн образования",
+        img: "img/portfolio-item-mobile@1x.png",
+        skills: ["HTML", "CSS", "Javascript"],
+        link: "#"
+      },
+      {
+        title: "Сайт школы онлайн образования",
+        img: "img/portfolio-item-mobile@1x.png",
+        skills: ["HTML", "CSS", "Javascript"],
+        link: "#"
+      },
+      {
+        title: "Сайт школы онлайн образования",
+        img: "img/portfolio-item-mobile@1x.png",
+        skills: ["HTML", "CSS", "Javascript"],
+        link: "#"
+      }
+    ];
+
+    var reviews = [
+      {
+        img: {
+          mobile: "img/kovalchuk-mobile@1x.jpg",
+          tablet: "img/kovalchuk-tablet@1x.jpg",
+        },
+        name: "Ковальчук Дмитрий",
+        profession: "— основатель Loftschool",
+        text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+      },
+      {
+        img: {
+          mobile: "img/sabantsev-mobile@1x.jpg",
+          tablet: "img/sabantsev-tablet@1x.jpg",
+        },
+        name: "Сабанцев Владимир",
+        profession: "— преподаватель",
+        text: "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!"
+      }
+    ];
+
+    var page = {
+      title: "Мои работы"
+    };
+
+block content
+  include ../common/hero
+  +hero(page)
+  main.page-main
+    section.portfolio
+      include ../common/triangles
+      +triangles("portfolio__triangles")
+      h2.portfolio__title.title Мои работы
+      .portfolio__slider.slider
+        ul.slider__list
+          each item in slider
+            li.slider__item
+              .slider__picture
+                img.slider__image(src=`${item.img}`, alt=`${item.title}`, width="248", height="160")
+              .slider__content
+                h3.slider__title.title.title--small.title--underlined #{item.title}
+                .slider__skills #{item.skills.join(", ")}
+              a.slider__link.button(href=`${item.link}`) Посмотреть сайт
+      .portfolio__toggles
+        button.portfolio__toggles-item.portfolio__toggles-item--next
+          svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
+            use(xlink:href="img/sprite.svg#icon-portf_arrow_down")
+        button.portfolio__toggles-item.portfolio__toggles-item--previous
+          svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
+            use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
+    section.reviews
+      .container.reviews__wrapper
+        h2.reviews__title.title Что обо мне говорят
+        each item in reviews
+          article.reviews__item
+            .reviews__picture
+              picture
+                source(media="(min-width: 768px)" srcset=`${item.img.tablet}`)
+                img.reviews__image(src=`${item.img.mobile}`, alt=`${item.name}`)
+            p #{item.text}
+            cite
+              b #{item.name}
+              | #{item.profession}
+        .reviews__contact-form.contact-form
+          h2.contact-form__title.title.title--small.title--underlined Связаться со мной
+          form(action="#")
+            .contact-form__fields
+              input.contact-form__field(type="text" name="name" placeholder="Имя" required)
+              input.contact-form__field(type="email" name="email" placeholder="Email" required)
+              textarea.contact-form__message(name="message" placeholder="Ваше сообщение" required)
+            .contact-form__buttons
+              button.contact-form__button.button(type="submit") Отправить
+              button.contact-form__button.contact-form__button--reset.button(type="reset") Очистить
+        .reviews__arrow-wrapper
+          button.reviews__arrow
+            svg.reviews__arrow-icon(fill="#ffffff", width="26", height="16")
+              use(xlink:href="img/sprite.svg#icon-arrow_down")
+  include ../common/footer

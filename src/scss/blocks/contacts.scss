@@ -1,0 +1,47 @@
+.contacts {
+  color: #474b57;
+  background-color: #fcfcfc;
+}
+
+.contacts__box {
+  margin-bottom: 30px;
+}
+
+.contacts__title {
+  position: relative;
+  margin: 0;
+  padding: 19px 55px 14px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 56px;
+    height: 3px;
+    background-color: #474b57;
+    transform: translateX(-50%);
+  }
+}
+
+.contacts__list {
+  margin-top: 20px;
+}
+
+.contacts__item {
+  margin-bottom: 10px;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+}
+
+.contacts__icon {
+  margin-right: 10px;
+}
+
+.contacts__map {
+  display: block;
+}

@@ -9,3 +9,64 @@ html::after {
 *::after {
   box-sizing: inherit;
 }
+
+html,
+body {
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: white;
+
+  a {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

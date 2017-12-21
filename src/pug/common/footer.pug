@@ -1,0 +1,48 @@
+-
+  var menu = [
+      {
+        title: "Мои работы",
+        link: "works.html"
+      },
+      {
+        title: "Обо мне",
+        link: "about.html"
+      },
+      {
+        title: "Блог",
+        link: "blog.html"
+      },
+      {
+        title: "Авторизация",
+        link: "index.html"
+      }
+    ];
+  var contacts = {
+      skype: "pilot297",
+      mailto: "andrey-tm203@mail.ru",
+      tel: "+79213288085",
+      address: "г. Гатчина, ул. Чехова, 22"
+    }
+
+  var contactsTitles = Object.keys(contacts);
+
+footer.footer
+  .footer__main
+    .container
+      .footer__item.footer__item--description Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+      .footer__item.footer__item--links
+        include menu
+        +menu("footer__menu")
+        include socials
+        +socials("footer__socials")
+      .footer__item.footer__item--contacts
+        ul.footer__contacts-list
+          each title in contactsTitles
+            li.footer__contacts-item
+              if title === "address"
+                |#{contacts[title]}
+              else
+                a.footer__contacts-link(href=`${title}:${contacts[title]}`)
+                  |#{contacts[title]}
+  include copyright
+  +copyright("footer__copyright")

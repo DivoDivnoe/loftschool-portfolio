@@ -1,0 +1,43 @@
+mixin socials(className, scale)
+  -
+    var links = [
+      {
+        name: "vk",
+        title: "Вконтакте",
+        href: "https://vk.com/id15900582",
+        icon: {
+          src: "img/sprite.svg#icon-vk",
+          width: Math.round(31 * `${scale ? scale : 1}`),
+          height: Math.round(17 * `${scale ? scale : 1}`)
+        }
+      },
+      {
+        name: "github",
+        title: "Гитхаб",
+        href: "https://github.com/DivoDivnoe",
+        icon: {
+          src: "img/sprite.svg#icon-github",
+          width: Math.round(26 * `${scale ? scale : 1}`),
+          height: Math.round(22 * `${(scale ? scale : 1)}`)
+        }
+      },
+      {
+        name: "instagram",
+        title: "Инстаграм",
+        href: "#",
+        icon: {
+          src: "img/sprite.svg#icon-in",
+          width: Math.round(24 * `${scale ? scale : 1}`),
+          height: Math.round(22 * `${scale ? scale : 1}`)
+        }
+      }
+    ];
+
+  div(class=className + " socials")
+    ul.socials__list
+      each item in links
+        li.socials__item
+          a.socials__link(href=`${item.href}`, target="_blank")
+            span.visually-hidden #{item.title}
+            svg(class=`socials__icon socials__icon--${item.name}`, fill="#ffffff", width=`${item.icon.width}`, height=`${item.icon.height}`)
+              use(xlink:href=`${item.icon.src}`)

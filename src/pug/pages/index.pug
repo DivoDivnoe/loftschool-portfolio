@@ -1,0 +1,45 @@
+extends ../_template
+
+block variables
+  - 
+    var title = "Сайт портфолио";
+    var welcomeMenu = [
+      {
+        title: "Мои работы",
+        link: "works.html",
+        mod: "works"
+      },
+      {
+        title: "Обо мне",
+        link: "about.html",
+        mod: "about"
+      },
+      {
+        title: "Блог",
+        link: "blog.html",
+        mod: "blog"
+      }
+    ];
+
+block content
+  section.welcome
+    .container.welcome__wrapper
+      h1.visually-hidden Сайт - портфолио Андрея Иванова
+      header.welcome-header
+        a.welcome-header__auth(href="auth.html") Авторизоваться
+      .welcome__user.user
+        .user__picture
+          img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+        .user__title
+          span.user__title-item.user__title-item--name Андрей Иванов
+          span.user__title-item.user__title-item--description Личный сайт веб разработчика
+        include ../common/socials
+        +socials('user__socials')
+        nav.welcome-nav
+          ul.welcome-nav__list
+            each item in welcomeMenu
+              li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
+                a.welcome-nav__link.button(href=item.link) #{item.title}
+      footer.welcome-footer
+        include ../common/copyright
+        +copyright("index-footer__copyright")
