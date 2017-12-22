@@ -49,7 +49,7 @@
                 <div class="hero__box">
                   <div class="hero__picture"><img class="hero__image" src="img/me-mobile@1x.jpg" alt="Андрей Иванов" width="140" height="180"></div>
                   <div class="hero__title">
-                    <h2 class="hero__title-name">Андрей Иванов</h2><span class="hero__title-description">Личный сайт веб разработчика</span>
+                    <div class="hero__title-name">Андрей Иванов</div><span class="hero__title-description">Личный сайт веб разработчика</span>
                   </div>
                 </div>
                 <div class="hero__arrow-wrapper">
@@ -68,7 +68,7 @@
                       <polygon class="triangle__left" points="0,0 0,38 160,38 160,27"></polygon>
                       <polygon class="triangle__right" points="320,0 320,38 160,38 160,27"></polygon>
                     </svg>
-          <h2 class="portfolio__title title">Мои работы</h2>
+          <h1 class="portfolio__title title">Мои работы</h1>
           <div class="portfolio__slider slider">
             <ul class="slider__list">
               <li class="slider__item">
@@ -132,9 +132,18 @@
               <h2 class="contact-form__title title title--small title--underlined">Связаться со мной</h2>
               <form action="#">
                 <div class="contact-form__fields">
-                  <input class="contact-form__field" type="text" name="name" placeholder="Имя" required>
-                  <input class="contact-form__field" type="email" name="email" placeholder="Email" required>
-                  <textarea class="contact-form__message" name="message" placeholder="Ваше сообщение" required></textarea>
+                  <div class="contact-form__field-wrapper">
+                    <label class="visually-hidden" for="name">Имя</label>
+                    <input class="contact-form__field" type="text" name="name" id="name" placeholder="Имя" required>
+                  </div>
+                  <div class="contact-form__field-wrapper">
+                    <label class="visually-hidden" for="email">Email</label>
+                    <input class="contact-form__field" type="email" name="email" id="email" placeholder="Email" required>
+                  </div>
+                  <div class="contact-form__field-wrapper">
+                    <label class="visually-hidden" for="message">Ваше сообщение</label>
+                    <textarea class="contact-form__message" name="message" id="message" placeholder="Ваше сообщение" required></textarea>
+                  </div>
                 </div>
                 <div class="contact-form__buttons">
                   <button class="contact-form__button button" type="submit">Отправить</button>
