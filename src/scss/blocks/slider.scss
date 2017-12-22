@@ -55,35 +55,3 @@
     transform: translateY(-50%);
   }
 }
-
-.portfolio__toggles {
-  display: flex;
-}
-
-.portfolio__toggles-item {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  padding-top: 33px;
-  padding-bottom: 33px;
-  border: none;
-  cursor: pointer;
-
-  &--next {
-    background-color: rgba(#aaabb7, 0.7);
-  }
-
-  &--previous {
-    background-color: rgba(#7e7f8a, 0.7);
-  }
-
-  &:hover {
-    .portfolio__toggles-icon {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.portfolio__toggles-icon {
-  transition: transform 0.3s;
-}

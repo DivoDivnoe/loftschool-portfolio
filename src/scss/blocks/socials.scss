@@ -16,7 +16,8 @@
 .socials__link {
   overflow: hidden;
 
-  &:hover {
+  &:hover,
+  &:focus {
     .socials__icon {
       fill: $darkBlue;
     }
