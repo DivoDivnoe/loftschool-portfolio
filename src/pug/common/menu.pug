@@ -1,0 +1,26 @@
+mixin menu(className)
+  -
+    var menu = [
+        {
+          title: "Мои работы",
+          link: "works.html"
+        },
+        {
+          title: "Обо мне",
+          link: "about.html"
+        },
+        {
+          title: "Блог",
+          link: "blog.html"
+        },
+        {
+          title: "Авторизация",
+          link: "index.html"
+        }
+      ];
+
+  nav(class=`${className}`)
+    ul(class=`${className}-list`)
+      each item in menu
+        li(class=`${className}-item`)
+          a(class=`${className}-link`, href=item.link) #{item.title}

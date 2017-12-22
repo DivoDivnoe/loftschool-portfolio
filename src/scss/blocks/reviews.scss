@@ -1,0 +1,132 @@
+.reviews {
+  background: #12171f url('../img/about-bg-mobile@1x.jpg') no-repeat top center;
+}
+
+.reviews__item {
+  margin-bottom: 33px;
+  font-style: italic;
+
+  p {
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  cite {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+
+    b {
+      display: block;
+    }
+  }
+}
+
+.reviews__title {
+  margin: 0;
+  padding: 30px 0 35px 0;
+}
+
+.reviews__picture {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.contact-form__title {
+  margin: 0 0 20px 0;
+  padding: 33px 0 16px 0;
+
+  &::after {
+    background-color: #ffffff;
+  }
+}
+
+.contact-form {
+  background-color: rgba(#dadbd6, 0.05);
+}
+
+.contact-form__fields {
+  width: 260px;
+  margin: 0 auto;
+}
+
+.contact-form__field-wrapper,
+.contact-form__message-wrapper {
+  margin-bottom: 20px;
+}
+
+.contact-form__field,
+.contact-form__message {
+  width: 100%;
+  color: #ffffff;
+  background-color: rgba(#ffffff, 0.07);
+  border: none;
+
+  &::placelholder {
+    color: rgba(#ffffff, 0.5);
+  }
+}
+
+.contact-form__field {
+  height: 40px;
+  padding: 0 20px;
+}
+
+.contact-form__message {
+  display: block;
+  height: 140px;
+  padding: 15px 20px;
+  resize: none;
+}
+
+.contact-form__buttons {
+  display: flex;
+}
+
+.contact-form__button {
+  width: 50%;
+  padding-top: 13px;
+  padding-bottom: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+
+  &--reset {
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(#ffffff, 0.05);
+    }
+  }
+}
+
+.reviews__arrow-wrapper {
+  display: flex;
+  padding-top: 42px;
+  padding-bottom: 40px;
+}
+
+.reviews__arrow {
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    .reviews__arrow-icon {
+      opacity: 1;
+    }
+  }
+}
+
+.reviews__arrow-icon {
+  opacity: 0.7;
+  transform: rotate(180deg);
+  transition: opacity 0.3s;
+}

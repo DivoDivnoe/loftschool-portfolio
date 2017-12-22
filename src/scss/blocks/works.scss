@@ -1,0 +1,70 @@
+.portfolio {
+  position: relative;
+  margin-top: -94px;
+  color: #474b57;
+}
+
+.portfolio__triangles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: rgba(#0d1120, 0.85);
+  transform: translateY(-100%);
+}
+
+.portfolio__title {
+  position: relative;
+  margin: 0;
+  padding-top: 21px;
+  padding-bottom: 31px;
+  color: #ffffff;
+  background-color: rgba(#0d1120, 0.85);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 129px;
+    height: 85px;
+    background: url('../img/svg/stars2.svg') no-repeat center;
+    background-size: contain;
+    opacity: 0.15;
+    transform: translate(-50%, -50%) rotate(180deg);
+    z-index: 100;
+  }
+}
+
+.portfolio__toggles {
+  display: flex;
+}
+
+.portfolio__toggles-item {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding-top: 33px;
+  padding-bottom: 33px;
+  border: none;
+  cursor: pointer;
+
+  &--next {
+    background-color: rgba(#aaabb7, 0.7);
+  }
+
+  &--previous {
+    background-color: rgba(#7e7f8a, 0.7);
+  }
+
+  &:hover,
+  &:focus {
+    .portfolio__toggles-icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.portfolio__toggles-icon {
+  transition: transform 0.3s;
+}

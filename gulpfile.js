@@ -8,6 +8,7 @@ const pug = require('gulp-pug');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const svgstore = require('gulp-svgstore');
+const inject = require('gulp-inject');
 const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
@@ -29,7 +30,7 @@ const paths = {
     dest: 'build/css'
   },
   img: {
-    src: 'src/img/**/*.{png,jpg,svg}',
+    src: 'src/img/pics/**/*.{png,jpg,svg}',
     dest: 'build/img'
   },
   fonts: {
@@ -80,7 +81,11 @@ gulp.task('scss', () => {
       })
     )
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(
+      sass({
+        includePaths: require('node-normalize-scss').includePaths
+      })
+    )
     .pipe(sourcemaps.write())
     .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
     .pipe(gulp.dest('build/css'))
@@ -115,7 +120,21 @@ gulp.task('js', () => {
 
 gulp.task('sprite', () => {
   return gulp
-    .src('build/img/icon-*.svg')
+    .src('src/img/icons/icon-*.svg')
+    .pipe(
+      imagemin([
+        imagemin.svgo({
+          plugins: [
+            {
+              removeAttrs: {
+                attrs: ['path:fill', 'g:fill']
+              },
+              removeEditorsNSData: true
+            }
+          ]
+        })
+      ])
+    )
     .pipe(svgstore({inlineSvg: true}))
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(paths.img.dest));
@@ -124,7 +143,7 @@ gulp.task('sprite', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.pug.src, gulp.series('pug'));
   gulp.watch(paths.scss.src, gulp.series('scss'));
-  gulp.watch(paths.img.src, gulp.series('copy-img'));
+  gulp.watch(paths.img.src, gulp.series('copy-img', 'sprite'));
   gulp.watch(paths.js.src, gulp.series('js'));
 });
 
@@ -139,13 +158,7 @@ gulp.task(
   'default',
   gulp.series(
     'clean',
-    gulp.parallel(
-      gulp.series('copy-img', 'sprite'),
-      'copy-fonts',
-      'scss',
-      'pug',
-      'js'
-    ),
+    gulp.parallel('copy-img', 'sprite', 'copy-fonts', 'scss', 'pug', 'js'),
     gulp.parallel('watch', 'serve')
   )
 );

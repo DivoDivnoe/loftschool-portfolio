@@ -1,13 +1,56 @@
-section.hero
-  .container
-    header.hero__header.header
-      include ../common/socials
-      +socials("header__socials")
-      nav.main-nav
-        button.main-nav__toggle
-          span.visually-hidden Главное меню
-      .user__picture
-        img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
-      .user__title
-        span.user__name Андрей Иванов
-        span.user__description Личный сайт веб разработчика
+-
+  var pages = [
+    {
+      title: "Мои работы",
+      href: "works.html"
+    },
+    {
+      title: "Блог",
+      href: "blog.html"
+    },
+    {
+      title: "Обо мне",
+      href: "about.html"
+    },
+    {
+      title: "Авторизация",
+      href: "index.html"
+    }
+  ];
+
+mixin hero(page)
+  section.hero
+    .container.hero__wrapper
+      header.hero__header.header
+        include ../common/socials
+        +socials("header__socials", 0.7)
+        nav.main-nav
+          button.main-nav__toggle
+            span.visually-hidden Главное меню
+          .main-nav__menu.main-nav__menu--closed
+            .container.main-nav__wrapper
+              button.main-nav__menu-close
+              ul.main-nav__list
+                each item in pages
+                  li.main-nav__item
+                    if item.title === page.title
+                      a.main-nav__link.title.title--underlined.main-nav__link--active #{item.title}
+                    else
+                      a.main-nav__link.title(href=`${item.href}`) #{item.title}
+      .hero__box
+        .hero__picture
+          img.hero__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+        .hero__title
+          if page.title === "Блог"
+            .hero__name.title #{page.title}
+            span.hero__description #{page.text}
+          else 
+            .hero__title-name Андрей Иванов
+            span.hero__title-description Личный сайт веб разработчика
+      if page !== "Блог"
+        .hero__arrow-wrapper
+          button.hero__arrow
+            svg.hero__arrow-icon(fill="#ffffff", width="26", height="16")
+              use(xlink:href="img/sprite.svg#icon-arrow_down")
+    .hero__stars
+      img.hero__stars-image(src="img/svg/stars1.svg", width="281", height="167")

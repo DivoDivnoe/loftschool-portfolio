@@ -1,0 +1,32 @@
+.copyright {
+  padding: 5px 0;
+}
+
+.copyright__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.copyright__item {
+  &:not(:last-child) {
+    &::after {
+      content: '';
+      display: inline-block;
+      vertical-align: center;
+      width: 2px;
+      height: 12px;
+      margin-bottom: -2px;
+      margin-left: 4px;
+      margin-right: 4px;
+      background-color: #888890;
+    }
+  }
+
+  &:first-child {
+    &::after {
+      display: none;
+    }
+  }
+}

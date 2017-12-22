@@ -1,46 +1,45 @@
 extends ../_template
 
 block variables
-  - var title = "Сайт портфолио";
-  - var welcomeMenu = [{title: "Мои работы",link: "works.html"}, {title: "Обо мне",link: "about.html"}, {title: "Блог",link: "blog.html"}];
+  - 
+    var title = "Сайт портфолио";
+    var welcomeMenu = [
+      {
+        title: "Мои работы",
+        link: "works.html",
+        mod: "works"
+      },
+      {
+        title: "Обо мне",
+        link: "about.html",
+        mod: "about"
+      },
+      {
+        title: "Блог",
+        link: "blog.html",
+        mod: "blog"
+      }
+    ];
 
 block content
   section.welcome
     h1.visually-hidden Сайт - портфолио Андрея Иванова
-    header.welcome-header
-      .container
-        a.header__auth.auth(href="#") Авторизоваться
-    .welcome__user.user
-      .user__picture
-        img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
-      .user__title
-        span.user__name Андрей Иванов
-        span.user__description Личный сайт веб разработчика
-      include ../common/socials
-      +socials('socials__list')
-      nav.main-nav
-        each item in welcomeMenu
-          ul.main-nav__list
-            li.main-nav__item
-              a.main-nav__link(href=item.link) #{item.title}
-
-  section.auth
-    h2.auth__title Авторизуйтесь
-    .auth__form
-      form(action="#")
-        input.auth__field(type="text", name="login", placeholder="Логин")
-        input.auth__field(type="text", name="password", placeholder="Пароль")
-        label.auth__capture-label
-          input.auth__capture(type="checkbox", name="human", value="yes")
-          |Я человек
-        .auth__confirm--wrapper
-          h3.auth__confirm-title Вы точно не робот?
-          label.auth__confirm-label
-            input.auth__confirm(type="radio", name="not-robot", value="yes")
-            |Да
-          label.auth__confirm-label
-            input.auth__confirm(type="radio", name="not-robot", value="no")
-            |Не уверен
-        .auth__menu
-          a.auth__menu-item(href="#") На главную
-          button.auth__menu-item.auth__menu-item--submit(type="submit") Войти
+    .container.welcome__wrapper
+      header.welcome-header
+        a.welcome-header__auth(href="auth.html") Авторизоваться
+      .welcome__user.user
+        .user__picture
+          img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+        .user__title
+          span.user__title-item.user__title-item--name Андрей Иванов
+          span.user__title-item.user__title-item--description Личный сайт веб разработчика
+        include ../common/socials
+        +socials('user__socials')
+        nav.welcome-nav
+          ul.welcome-nav__list
+            each item in welcomeMenu
+              li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
+                a.welcome-nav__link.button(href=item.link) #{item.title}
+      footer.welcome-footer
+        include ../common/copyright
+        +copyright("index-footer__copyright")

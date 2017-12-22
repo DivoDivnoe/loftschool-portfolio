@@ -1,0 +1,37 @@
+.welcome {
+  height: 568px; //100vh;
+  background: #13315f url('../img/night-bg-mobile@1x.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.welcome__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 30px 0;
+}
+
+.welcome-header__auth {
+  padding: 7px 19px;
+  font-weight: 500;
+  border: 1px solid white;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: $blue-hover;
+    border: none;
+  }
+}
+
+.welcome-footer {
+  margin-top: auto;
+}

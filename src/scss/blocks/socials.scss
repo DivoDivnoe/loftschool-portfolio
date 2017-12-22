@@ -1,0 +1,36 @@
+.socials__list {
+  display: flex;
+  align-self: center;
+}
+
+.socials__item {
+  display: flex;
+  align-items: center;
+  width: 31px;
+
+  &:not(:last-child) {
+    margin-right: 27px;
+  }
+}
+
+.socials__link {
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    .socials__icon {
+      fill: $darkBlue;
+    }
+  }
+}
+
+.socials__icon {
+  display: flex;
+  align-items: center;
+  fill: rgba(#ffffff, 0.5);
+  transition: 0.3s;
+
+  &:hover {
+    fill: $darkBlue;
+  }
+}

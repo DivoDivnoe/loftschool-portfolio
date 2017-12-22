@@ -1,0 +1,52 @@
+.about {
+  position: relative;
+  color: #474b57;
+  background-color: #f2f0e8;
+}
+
+.about__title {
+  margin: 0;
+  padding: 10px 0 32px 0;
+}
+
+.about__triangles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #f2f0e8;
+  transform: translateY(-100%);
+}
+
+.about__picture {
+  margin: 0;
+  height: 283px;
+  overflow: hidden;
+}
+
+.about__image {
+  margin-top: -40px;
+  width: 100%;
+}
+
+.about__item {
+  padding-bottom: 8px;
+
+  &--skills {
+    background-color: #f4f5f0;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+.about__item-title {
+  margin: 0;
+  padding: 24px 55px 16px;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: calc(28 / 21);
+  font-family: 'Sansus Webissimo', 'Arial', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
