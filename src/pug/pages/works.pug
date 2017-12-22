@@ -55,7 +55,7 @@ block content
     section.portfolio
       include ../common/triangles
       +triangles("portfolio__triangles")
-      h2.portfolio__title.title Мои работы
+      h1.portfolio__title.title Мои работы
       .portfolio__slider.slider
         ul.slider__list
           each item in slider
@@ -90,9 +90,15 @@ block content
           h2.contact-form__title.title.title--small.title--underlined Связаться со мной
           form(action="#")
             .contact-form__fields
-              input.contact-form__field(type="text" name="name" placeholder="Имя" required)
-              input.contact-form__field(type="email" name="email" placeholder="Email" required)
-              textarea.contact-form__message(name="message" placeholder="Ваше сообщение" required)
+              .contact-form__field-wrapper
+                label.visually-hidden(for="name") Имя
+                input.contact-form__field(type="text", name="name", id="name", placeholder="Имя", required)
+              .contact-form__field-wrapper
+                label.visually-hidden(for="email") Email
+                input.contact-form__field(type="email", name="email", id="email", placeholder="Email", required)
+              .contact-form__field-wrapper
+                label.visually-hidden(for="message") Ваше сообщение
+                textarea.contact-form__message(name="message", id="message", placeholder="Ваше сообщение", required)
             .contact-form__buttons
               button.contact-form__button.button(type="submit") Отправить
               button.contact-form__button.contact-form__button--reset.button(type="reset") Очистить

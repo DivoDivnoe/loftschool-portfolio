@@ -42,10 +42,10 @@ mixin hero(page)
           img.hero__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
         .hero__title
           if page.title === "Блог"
-            h2.hero__name.title #{page.title}
+            .hero__name.title #{page.title}
             span.hero__description #{page.text}
           else 
-            h2.hero__title-name Андрей Иванов
+            .hero__title-name Андрей Иванов
             span.hero__title-description Личный сайт веб разработчика
       if page !== "Блог"
         .hero__arrow-wrapper

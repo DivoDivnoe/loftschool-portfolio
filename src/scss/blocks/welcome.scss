@@ -23,7 +23,8 @@
   border: 1px solid white;
   transition: background-color 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     padding-top: 8px;
     padding-bottom: 8px;
     background-color: $blue-hover;

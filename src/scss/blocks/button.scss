@@ -8,7 +8,8 @@
   border: none;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $blue-hover;
   }
 }

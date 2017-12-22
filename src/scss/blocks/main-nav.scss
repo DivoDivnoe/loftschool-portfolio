@@ -8,7 +8,8 @@
   cursor: pointer;
   transition: 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 }

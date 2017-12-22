@@ -37,6 +37,20 @@
   justify-content: space-around;
 }
 
+.footer__menu-link {
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.footer__contacts-link {
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 .footer__copyright {
   background-color: $blue;
 }
