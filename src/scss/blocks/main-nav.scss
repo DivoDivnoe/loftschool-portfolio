@@ -20,15 +20,12 @@
   left: 0;
   right: 0;
   bottom: 0;
+  display: none;
   background-color: rgba(#253468, 0.87);
   z-index: 1000;
 
   &--opened {
     display: block;
-  }
-
-  &--closed {
-    display: none;
   }
 }
 
@@ -94,5 +91,12 @@
 
   &:hover {
     color: #ffffff;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .main-nav__toggle {
+    width: 40px;
+    height: 35px;
   }
 }

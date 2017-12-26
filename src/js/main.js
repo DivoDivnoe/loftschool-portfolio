@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Hello');
-});
+import addMenuHandlers from './main-menu';
+
+addMenuHandlers();

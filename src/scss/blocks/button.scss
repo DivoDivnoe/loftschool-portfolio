@@ -13,3 +13,9 @@
     background-color: $blue-hover;
   }
 }
+
+@media screen and (min-width: $tablet) {
+  .button {
+    padding: 10px 21px;
+  }
+}

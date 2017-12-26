@@ -128,8 +128,10 @@ gulp.task('sprite', () => {
             {
               removeAttrs: {
                 attrs: ['path:fill', 'g:fill']
-              },
-              removeEditorsNSData: true
+              }
+            },
+            {
+              removeViewBox: false
             }
           ]
         })
@@ -143,7 +145,8 @@ gulp.task('sprite', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.pug.src, gulp.series('pug'));
   gulp.watch(paths.scss.src, gulp.series('scss'));
-  gulp.watch(paths.img.src, gulp.series('copy-img', 'sprite'));
+  gulp.watch(paths.img.src, gulp.series('copy-img'));
+  gulp.watch('src/img/icons/**/*.svg', gulp.series('sprite'));
   gulp.watch(paths.js.src, gulp.series('js'));
 });
 

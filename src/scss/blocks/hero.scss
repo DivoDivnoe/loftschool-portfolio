@@ -1,27 +1,35 @@
 .hero {
   position: relative;
   flex-shrink: 0;
+  min-height: 640px;
   height: 100vh;
-  background: #13315f url('../img/hero-mobile@1x.jpg') no-repeat top center;
+  background: #13315f url('../img/hero-mobile@1x.jpg') no-repeat center;
   background-size: cover;
 }
 
 .hero__wrapper {
-  position: relative;
-  z-index: 100;
+  height: 100%;
+}
+
+.hero__box-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70%;
 }
 
 .hero__box {
-  margin-top: 70px;
-  margin-bottom: 150px;
+  position: relative;
 }
 
 .hero__picture {
+  position: relative;
   width: 140px;
   height: 140px;
   border-radius: 50%;
   margin: 0 auto 20px auto;
   overflow: hidden;
+  z-index: 100;
 }
 
 .hero__image {
@@ -69,10 +77,42 @@
 
 .hero__stars {
   position: absolute;
-  top: 10%;
+  top: -10%;
   left: 50%;
   width: 281px;
   height: 167px;
   opacity: 0.07;
   transform: translateX(-50%);
+}
+
+.hero__stars-image {
+  min-width: 100%;
+}
+
+@media screen and (min-width: $tablet) {
+  .hero {
+    background-image: url('../img/hero-tablet@1x.jpg');
+  }
+
+  .hero__title-name {
+    margin: 2px 0;
+    font-size: 35px;
+    line-height: calc(41 / 35);
+  }
+
+  .hero__box-wrapper {
+    height: 65%;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .hero {
+    background-image: url('../img/hero-desktop@1x.jpg');
+  }
+
+  .hero__stars {
+    top: -20%;
+    width: 460px;
+    height: 270px;
+  }
 }

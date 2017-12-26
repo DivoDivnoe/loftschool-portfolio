@@ -12,3 +12,15 @@
     }
   }
 }
+
+@media screen and (min-width: $tablet) {
+  .header {
+    padding: 28px 6px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .header {
+    padding: 28px 0;
+  }
+}

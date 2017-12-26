@@ -23,7 +23,7 @@
   text-align: center;
 
   &--name {
-    margin-bottom: 5px;
+    padding-bottom: 5px;
     font-weight: 500;
     font-size: 21px;
     line-height: calc(28 / 21);
@@ -32,4 +32,42 @@
 
 .user__socials {
   margin-bottom: 41px;
+}
+
+@media screen and (min-width: $tablet) {
+  .user {
+    width: 348px;
+    margin: 0 auto;
+  }
+
+  .user__title {
+    margin-top: 13px;
+  }
+
+  .user__title-item {
+    &--name {
+      padding-bottom: 5px;
+      font-size: 28px;
+      line-height: calc(34 / 28);
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .user {
+    width: 380px;
+    margin: 0 auto;
+  }
+
+  .user__title {
+    margin-top: 13px;
+  }
+
+  .user__title-item {
+    &--name {
+      padding-bottom: 5px;
+      font-size: 28px;
+      line-height: calc(34 / 28);
+    }
+  }
 }

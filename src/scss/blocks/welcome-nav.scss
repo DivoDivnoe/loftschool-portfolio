@@ -23,6 +23,14 @@
 
 .welcome-nav__link {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+@media screen and (min-width: $tablet) {
+  .welcome-nav__link {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }

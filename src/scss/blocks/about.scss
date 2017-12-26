@@ -6,7 +6,7 @@
 
 .about__title {
   margin: 0;
-  padding: 10px 0 32px 0;
+  padding: 16px 0 32px 0;
 }
 
 .about__triangles {
@@ -18,7 +18,7 @@
 }
 
 .about__picture {
-  margin: 0;
+  margin: 0 auto;
   height: 283px;
   overflow: hidden;
 }
@@ -29,6 +29,8 @@
 }
 
 .about__item {
+  width: 320px;
+  margin: 0 auto;
   padding-bottom: 8px;
 
   &--skills {
@@ -49,4 +51,117 @@
   font-family: 'Sansus Webissimo', 'Arial', sans-serif;
   text-transform: uppercase;
   text-align: center;
+}
+
+.about-footer {
+  position: relative;
+  margin-top: -19px;
+}
+
+@media screen and (min-width: $tablet) {
+  .about {
+    font-size: 14px;
+  }
+  .about__picture {
+    height: 417px;
+  }
+
+  .about__title {
+    margin: 0;
+    padding: 33px 0 39px 0;
+  }
+
+  .about__item-title {
+    padding-top: 42px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .about__item {
+    padding-bottom: 33px;
+
+    &--description {
+      width: 472px;
+      margin: 0 auto;
+    }
+
+    &--skills {
+      width: 596px;
+      padding-bottom: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: calc(24 / 14);
+    }
+  }
+
+  .about__wrapper {
+    margin: 0 auto;
+    width: 472px;
+  }
+
+  .about-footer {
+    margin-top: -230px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .about__items {
+    display: flex;
+    justify-content: space-between;
+    width: 1180px;
+    margin: 0 auto;
+  }
+
+  .about__item {
+    width: 580px;
+    margin: 0;
+
+    p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: calc(24 / 16);
+    }
+
+    &--skills {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &--description {
+      padding-bottom: 13px;
+    }
+  }
+
+  .about__title {
+    padding-top: 0;
+  }
+
+  .about__item-title {
+    padding: 0 70px 24px 70px;
+    margin-bottom: 24px;
+  }
+
+  .about__picture,
+  .about__wrapper--description {
+    width: 444px;
+  }
+
+  .about__wrapper {
+    &--skills {
+      width: 551px;
+      margin: 0 0 35px 0;
+    }
+  }
+
+  .about__picture {
+    height: 390px;
+    margin-bottom: 37px;
+  }
+
+  .about-footer {
+    margin-top: -188px;
+  }
 }

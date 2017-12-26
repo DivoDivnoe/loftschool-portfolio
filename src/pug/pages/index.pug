@@ -27,19 +27,20 @@ block content
     .container.welcome__wrapper
       header.welcome-header
         a.welcome-header__auth(href="auth.html") Авторизоваться
-      .welcome__user.user
-        .user__picture
-          img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
-        .user__title
-          span.user__title-item.user__title-item--name Андрей Иванов
-          span.user__title-item.user__title-item--description Личный сайт веб разработчика
-        include ../common/socials
-        +socials('user__socials')
-        nav.welcome-nav
-          ul.welcome-nav__list
-            each item in welcomeMenu
-              li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
-                a.welcome-nav__link.button(href=item.link) #{item.title}
+      .welcome__user-wrapper
+        .welcome__user.user
+          .user__picture
+            img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+          .user__title
+            span.user__title-item.user__title-item--name Андрей Иванов
+            span.user__title-item.user__title-item--description Личный сайт веб разработчика
+          include ../common/socials
+          +socials('user__socials')
+          nav.welcome-nav
+            ul.welcome-nav__list
+              each item in welcomeMenu
+                li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
+                  a.welcome-nav__link.button(href=item.link) #{item.title}
       footer.welcome-footer
         include ../common/copyright
         +copyright("index-footer__copyright")
