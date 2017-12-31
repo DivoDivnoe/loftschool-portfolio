@@ -1,20 +1,33 @@
-const toggle = document.querySelector('.main-nav__toggle');
+const toggle = document.querySelector('.toggle');
 const menu = document.querySelector('.main-nav__menu');
-const closer = document.querySelector('.main-nav__menu-close');
 
 const addMenuHandlers = () => {
   if (!toggle) return false;
 
-  const menuCloseHandler = () => {
-    menu.classList.remove('main-nav__menu--opened');
-    closer.removeEventListener('click', menuCloseHandler);
+  const menuList = menu.querySelector('.main-nav__list');
+
+  const appearMenuHandler = () => {
+    menuList.style.visibility = 'visible';
   };
 
-  toggle.addEventListener('click', () => {
+  const menuOpenHandler = () => {
+    toggle.classList.add('toggle--close');
     menu.classList.add('main-nav__menu--opened');
 
-    closer.addEventListener('click', menuCloseHandler);
-  });
+    toggle.onclick = menuCloseHandler;
+    menu.addEventListener('transitionend', appearMenuHandler);
+  };
+
+  const menuCloseHandler = () => {
+    toggle.classList.remove('toggle--close');
+    menu.classList.remove('main-nav__menu--opened');
+    menuList.style.visibility = 'hidden';
+
+    toggle.onclick = menuOpenHandler;
+    menu.removeEventListener('transitionend', appearMenuHandler);
+  };
+
+  toggle.onclick = menuOpenHandler;
 };
 
 export default addMenuHandlers;

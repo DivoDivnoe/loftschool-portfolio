@@ -25,11 +25,11 @@ mixin hero(page)
         include ../common/socials
         +socials("header__socials", 0.7)
         nav.main-nav
-          button.main-nav__toggle
+          button.main-nav__toggle.toggle
             span.visually-hidden Главное меню
+            span.toggle-line
           .main-nav__menu
             .container.main-nav__wrapper
-              button.main-nav__menu-close
               ul.main-nav__list
                 each item in pages
                   li.main-nav__item

@@ -1,4 +1,7 @@
 .welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
   background: #13315f url('../img/night-bg-mobile@1x.jpg') no-repeat center;
   background-size: cover;
@@ -22,12 +25,16 @@
   font-weight: 500;
   border: 1px solid white;
   transition: background-color 0.3s;
+  visibility: visible;
 
-  &:hover,
-  &:focus {
+  &:hover {
     padding: 8px 20px;
     background-color: $blue-hover;
     border: none;
+  }
+
+  &--hidden {
+    visibility: hidden;
   }
 }
 
@@ -36,6 +43,33 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.welcome__user-box {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1200;
+  transition: transform 1s;
+
+  &--rotated {
+    transform: rotateY(180deg);
+  }
+}
+
+.welcome__user,
+.welcome__form {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.welcome__user {
+  transform: translateY(-50%);
+}
+
+.welcome__form {
+  transform: translateY(-50%) rotateY(180deg);
 }
 
 .welcome-footer {
@@ -60,6 +94,11 @@
       padding: 9px 28px 12px 28px;
     }
   }
+
+  .welcome__user-wrapper {
+    width: 348px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: $desktop) {
@@ -69,5 +108,9 @@
 
   .welcome-header {
     padding: 24px 0;
+  }
+
+  .welcome__user-wrapper {
+    width: 380px;
   }
 }

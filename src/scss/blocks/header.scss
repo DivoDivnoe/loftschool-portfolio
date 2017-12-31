@@ -8,7 +8,7 @@
 .header__socials {
   .socials__item {
     &:not(:last-child) {
-      margin-right: 22px;
+      margin-right: 34px;
     }
   }
 }
@@ -16,6 +16,14 @@
 @media screen and (min-width: $tablet) {
   .header {
     padding: 28px 6px;
+  }
+
+  .header__socials {
+    .socials__item {
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+    }
   }
 }
 
