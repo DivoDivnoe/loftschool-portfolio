@@ -24,6 +24,15 @@ block variables
 block content
   section.welcome
     h1.visually-hidden Сайт - портфолио Андрея Иванова
+    .welcome__bg
+    .parallax
+      .parallax__layer.parallax__layer--background
+        video(autoplay="autoplay", loop="loop").parallax__video
+          source(src="video/night.mp4", type="video/mp4")
+      .parallax__layer.parallax__layer--mountain
+        img.parallax__image(src="img/mountain@1x.png", alt="mountain", width="1200", height="332")
+      .parallax__layer.parallax__layer--forest
+        img.parallax__image(src="img/forest@1x.png", alt="forest", width="1200", height="263")
     .container.welcome__wrapper
       header.welcome-header
         a.welcome-header__auth(href="auth.html") Авторизоваться

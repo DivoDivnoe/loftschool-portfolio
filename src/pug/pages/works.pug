@@ -103,22 +103,24 @@ block content
               cite
                 b #{item.name}
                 | #{item.profession}
-        .reviews__contact-form.contact-form
-          h2.contact-form__title.title.title--small.title--underlined Связаться со мной
-          form(action="#")
-            .contact-form__fields
-              .contact-form__field-wrapper
-                label.visually-hidden(for="name") Имя
-                input.contact-form__field(type="text", name="name", id="name", placeholder="Ваше имя", required)
-              .contact-form__field-wrapper
-                label.visually-hidden(for="email") Email
-                input.contact-form__field(type="email", name="email", id="email", placeholder="Ваш email", required)
-              .contact-form__field-wrapper
-                label.visually-hidden(for="message") Ваше сообщение
-                textarea.contact-form__message(name="message", id="message", placeholder="Ваше сообщение", required)
-            .contact-form__buttons
-              button.contact-form__button.button(type="submit") Отправить
-              button.contact-form__button.contact-form__button--reset.button(type="reset") Очистить
+        .reviews_form-wrapper
+          .reviews__form.contact-form
+            .contact-form__bg
+            h2.contact-form__title.title.title--small.title--underlined Связаться со мной
+            form(action="#")
+              .contact-form__fields
+                .contact-form__field-wrapper
+                  label.visually-hidden(for="name") Имя
+                  input.contact-form__field(type="text", name="name", id="name", placeholder="Ваше имя", required)
+                .contact-form__field-wrapper
+                  label.visually-hidden(for="email") Email
+                  input.contact-form__field(type="email", name="email", id="email", placeholder="Ваш email", required)
+                .contact-form__field-wrapper
+                  label.visually-hidden(for="message") Ваше сообщение
+                  textarea.contact-form__message(name="message", id="message", placeholder="Ваше сообщение", required)
+              .contact-form__buttons
+                button.contact-form__button.button(type="submit") Отправить
+                button.contact-form__button.contact-form__button--reset.button(type="reset") Очистить
         .reviews__arrow-wrapper
           button.reviews__arrow
             svg.reviews__arrow-icon(fill="#ffffff", width="26", height="16")

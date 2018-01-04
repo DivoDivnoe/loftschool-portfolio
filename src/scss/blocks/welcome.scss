@@ -1,10 +1,60 @@
 .welcome {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  min-height: 650px;
+}
+
+.welcome__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: #13315f url('../img/night-bg-mobile@1x.jpg') no-repeat center;
   background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url('../img/night-bg-mobile@2x.jpg');
+  }
+}
+
+.parallax {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  will-change: transform;
+
+  &--background {
+    background-color: #223b65;
+  }
+}
+
+.parallax__image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  min-width: 110%;
+}
+
+.parallax__video {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .welcome__wrapper {
@@ -21,6 +71,7 @@
 }
 
 .welcome-header__auth {
+  position: relative;
   padding: 7px 19px;
   font-weight: 500;
   border: 1px solid white;
@@ -73,12 +124,17 @@
 }
 
 .welcome-footer {
+  position: relative;
   margin-top: auto;
 }
 
 @media screen and (min-width: $tablet) {
-  .welcome {
-    background-image: url('../img/night-bg-tablet@1x.jpg');
+  .welcome__bg {
+    display: none;
+  }
+
+  .parallax {
+    display: block;
   }
 
   .welcome-header {
@@ -102,10 +158,6 @@
 }
 
 @media screen and (min-width: $desktop) {
-  .welcome {
-    background-image: url('../img/night-bg-desktop@1x.jpg');
-  }
-
   .welcome-header {
     padding: 24px 0;
   }

@@ -1,8 +1,24 @@
 .contact-form {
-  background-color: rgba(#dadbd6, 0.05);
+  position: relative;
+
+  form {
+    position: relative;
+  }
+}
+
+.contact-form__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(#dadbd6, 0.05) url('../img/about-bg-mobile@1x.jpg') no-repeat -225px -556px;
+  background-size: 768px;
+  filter: blur(1px);
 }
 
 .contact-form__title {
+  position: relative;
   margin: 0 0 20px 0;
   padding: 33px 0 16px 0;
 
@@ -68,9 +84,10 @@
 }
 
 @media screen and (min-width: $tablet) {
-  .contact-form {
-    width: 348px;
-    margin: 0 auto;
+  .contact-form__bg {
+    background-image: url('../img/about-bg-tablet@1x.jpg');
+    background-size: 1200px;
+    background-position: -430px -510px;
   }
 
   .contact-form__title {
@@ -108,8 +125,10 @@
 }
 
 @media screen and (min-width: $desktop) {
-  .contact-form {
-    width: 380px;
+  .contact-form__bg {
+    background-image: url('../img/about-bg-desktop@1x.jpg');
+    background-size: 1800px;
+    background-position: -711px -552px;
   }
 
   .contact-form__title {

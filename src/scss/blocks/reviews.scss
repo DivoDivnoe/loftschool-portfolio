@@ -4,6 +4,10 @@
   background-size: cover;
 }
 
+.reviews_form-wrapper {
+  overflow: hidden;
+}
+
 .reviews__item {
   margin-bottom: 33px;
   font-style: italic;
@@ -70,6 +74,11 @@
     background-image: url('../img/about-bg-tablet@1x.jpg');
   }
 
+  .reviews_form-wrapper {
+    width: 348px;
+    margin: 0 auto;
+  }
+
   .reviews__title {
     padding: 38px 140px 41px 140px;
   }
@@ -109,6 +118,10 @@
   .reviews {
     padding-bottom: 188px;
     background-image: url('../img/about-bg-desktop@1x.jpg');
+  }
+
+  .reviews_form-wrapper {
+    width: 380px;
   }
 
   .reviews__wrapper {

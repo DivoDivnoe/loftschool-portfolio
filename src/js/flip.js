@@ -14,7 +14,6 @@ const flip = () => {
   box.style.height = maxHeight + 'px';
 
   const authClickHandler = evt => {
-    console.log(333);
     evt.preventDefault();
 
     box.classList.add('welcome__user-box--rotated');

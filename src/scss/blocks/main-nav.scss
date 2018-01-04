@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   display: block;
-  z-index: -1;
+  visibility: hidden;
 
   &::before,
   &::after {
@@ -28,7 +28,7 @@
   }
 
   &--opened {
-    z-index: 1000;
+    visibility: visible;
 
     &::before,
     &::after {
