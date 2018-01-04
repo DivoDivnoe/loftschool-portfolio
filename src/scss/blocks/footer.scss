@@ -96,6 +96,10 @@
     line-height: calc(24 / 14);
   }
 
+  .footer__menu-list {
+    justify-content: flex-start;
+  }
+
   .footer__menu-item {
     &:not(:last-child) {
       margin-right: 32px;
@@ -157,5 +161,27 @@
 
   .footer__contacts-item {
     text-align: left;
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .footer__item {
+    &--description {
+      width: 570px;
+      padding-top: 0;
+      padding-bottom: 16px;
+      padding-right: 190px;
+      text-align: left;
+    }
+
+    &--links {
+      align-items: flex-start;
+      width: 599px;
+      padding-right: 30px;
+    }
+
+    &--contacts {
+      flex: 1;
+    }
   }
 }

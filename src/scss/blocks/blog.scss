@@ -6,7 +6,7 @@
 
 .blog__triangles {
   position: absolute;
-  top: 0;
+  top: 1px;
   left: 0;
   transform: translateY(-100%);
 }
@@ -134,10 +134,7 @@
     width: 300px;
     padding: 8px 0 0 0;
     background-color: transparent;
-
-    &--closed {
-      transform: translateX(-100%);
-    }
+    transform: none;
   }
 
   .blog__menu-item {
@@ -201,5 +198,21 @@
 
   .blog__menu-button {
     display: none;
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .blog__content {
+    width: 1740px;
+  }
+
+  .blog__menu {
+    width: 360px;
+  }
+
+  .blog__wrapper {
+    width: 1380px;
+    padding-left: 120px;
+    padding-right: 380px;
   }
 }

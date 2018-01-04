@@ -1,4 +1,4 @@
-export const mouseMoveParallax = () => {
+const mouseMove = () => {
   const parallaxContainer = document.querySelector('.parallax');
 
   if (!parallaxContainer) return false;
@@ -37,8 +37,11 @@ export const mouseMoveParallax = () => {
   }
 };
 
-export const scrollParallax = () => {
+const scroll = () => {
   const bg = document.querySelector('.hero__bg');
+
+  if (!bg) return false;
+
   const user = document.querySelector('.hero__box');
 
   const move = (block, windowScroll, strafeAmount) => {
@@ -56,3 +59,5 @@ export const scrollParallax = () => {
     init(window.pageYOffset);
   });
 };
+
+export default {scroll, mouseMove};

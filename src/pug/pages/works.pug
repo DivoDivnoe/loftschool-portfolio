@@ -6,9 +6,22 @@ block variables
       {
         title: "Сайт школы онлайн образования",
         img: {
-          mobile: "img/portfolio-item-mobile@1x.png",
-          tablet: "img/portfolio-item-tablet@1x.png",
-          desktop: "img/portfolio-item-desktop@1x.png"
+          mobile: {
+            normal: "img/portfolio-item-mobile@1x.png",
+            retina: "img/portfolio-item-mobile@2x.png"
+          },
+          tablet: {
+            normal: "img/portfolio-item-tablet@1x.png",
+            retina: "img/portfolio-item-tablet@2x.png"
+          },
+          desktop: {
+            normal: "img/portfolio-item-desktop@1x.png",
+            retina: "img/portfolio-item-desktop@2x.png"
+          },
+          desktopLarge: {
+            normal: "img/portfolio-item-desktop-large@1x.png",
+            retina: "img/portfolio-item-desktop-large@2x.png"
+          }
         },
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
@@ -16,9 +29,22 @@ block variables
       {
         title: "Сайт школы онлайн образования",
         img: {
-          mobile: "img/portfolio-item-mobile@1x.png",
-          tablet: "img/portfolio-item-tablet@1x.png",
-          desktop: "img/portfolio-item-desktop@1x.png"
+          mobile: {
+            normal: "img/portfolio-item-mobile@1x.png",
+            retina: "img/portfolio-item-mobile@2x.png"
+          },
+          tablet: {
+            normal: "img/portfolio-item-tablet@1x.png",
+            retina: "img/portfolio-item-tablet@2x.png"
+          },
+          desktop: {
+            normal: "img/portfolio-item-desktop@1x.png",
+            retina: "img/portfolio-item-desktop@2x.png"
+          },
+          desktopLarge: {
+            normal: "img/portfolio-item-desktop-large@1x.png",
+            retina: "img/portfolio-item-desktop-large@2x.png"
+          }
         },
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
@@ -26,9 +52,22 @@ block variables
       {
         title: "Сайт школы онлайн образования",
         img: {
-          mobile: "img/portfolio-item-mobile@1x.png",
-          tablet: "img/portfolio-item-tablet@1x.png",
-          desktop: "img/portfolio-item-desktop@1x.png"
+          mobile: {
+            normal: "img/portfolio-item-mobile@1x.png",
+            retina: "img/portfolio-item-mobile@2x.png"
+          },
+          tablet: {
+            normal: "img/portfolio-item-tablet@1x.png",
+            retina: "img/portfolio-item-tablet@2x.png"
+          },
+          desktop: {
+            normal: "img/portfolio-item-desktop@1x.png",
+            retina: "img/portfolio-item-desktop@2x.png"
+          },
+          desktopLarge: {
+            normal: "img/portfolio-item-desktop-large@1x.png",
+            retina: "img/portfolio-item-desktop-large@2x.png"
+          }
         },
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
@@ -38,8 +77,14 @@ block variables
     var reviews = [
       {
         img: {
-          mobile: "img/kovalchuk-mobile@1x.jpg",
-          tablet: "img/kovalchuk-tablet@1x.jpg",
+          mobile: {
+            normal: "img/kovalchuk-mobile@1x.jpg",
+            retina: "img/kovalchuk-mobile@2x.jpg"
+          },
+          tablet: {
+            normal: "img/kovalchuk-tablet@1x.jpg",
+            retina: "img/kovalchuk-tablet@2x.jpg"
+          }
         },
         name: "Ковальчук Дмитрий",
         profession: "— основатель Loftschool",
@@ -47,8 +92,14 @@ block variables
       },
       {
         img: {
-          mobile: "img/sabantsev-mobile@1x.jpg",
-          tablet: "img/sabantsev-tablet@1x.jpg",
+          mobile: {
+            normal: "img/sabantsev-mobile@1x.jpg",
+            retina: "img/sabantsev-mobile@2x.jpg"
+          },
+          tablet: {
+            normal: "img/sabantsev-tablet@1x.jpg",
+            retina: "img/sabantsev-tablet@2x.jpg"
+          }
         },
         name: "Сабанцев Владимир",
         profession: "— преподаватель",
@@ -75,9 +126,10 @@ block content
               li.slider__item
                 .slider__picture
                   picture
-                    source(media="(min-width: 1200px)" srcset=`${item.img.desktop}`)
-                    source(media="(min-width: 768px)" srcset=`${item.img.tablet}`)
-                    img.slider__image(src=`${item.img.mobile}`, alt=`${item.title}`)
+                    source(media="(min-width: 1800px)", srcset=`${item.img.desktopLarge.normal} 1x, ${item.img.desktopLarge.retina} 2x`)
+                    source(media="(min-width: 1200px)", srcset=`${item.img.desktop.normal} 1x, ${item.img.desktop.retina} 2x`)
+                    source(media="(min-width: 768px)", srcset=`${item.img.tablet.normal} 1x, ${item.img.tablet.retina} 2x`)
+                    img.slider__image(src=`${item.img.mobile.normal}`, srcset=`${item.img.mobile.retina} 2x`, alt=`${item.title}`)
                 .slider__content
                   h3.slider__title.title.title--small.title--underlined #{item.title}
                   .slider__skills #{item.skills.join(", ")}
@@ -97,8 +149,8 @@ block content
             article.reviews__item
               .reviews__picture
                 picture
-                  source(media="(min-width: 768px)" srcset=`${item.img.tablet}`)
-                  img.reviews__image(src=`${item.img.mobile}`, alt=`${item.name}`)
+                  source(media="(min-width: 768px)" srcset=`${item.img.tablet.normal} 1x, ${item.img.tablet.retina} 2x`)
+                  img.reviews__image(src=`${item.img.mobile.normal}`, srcset=`${item.img.mobile.retina} 2x`, alt=`${item.name}`)
               p #{item.text}
               cite
                 b #{item.name}

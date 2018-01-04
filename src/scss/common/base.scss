@@ -142,3 +142,9 @@ img {
     line-height: calc(36 / 30);
   }
 }
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    width: 1740px;
+  }
+}
