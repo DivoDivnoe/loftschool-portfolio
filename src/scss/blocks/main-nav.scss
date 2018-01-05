@@ -1,35 +1,45 @@
-.main-nav__toggle {
-  width: 26px;
-  height: 23px;
-  background: transparent url('../img/svg/hamburger.svg') no-repeat center;
-  background-size: cover;
-  border: none;
-  opacity: 0.7;
-  cursor: pointer;
-  transition: 0.3s;
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
-}
-
 .main-nav__menu {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(#253468, 0.87);
-  z-index: 1000;
+  display: block;
+  visibility: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(#253468, 0.87);
+    z-index: 100;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
 
   &--opened {
-    display: block;
-  }
+    visibility: visible;
 
-  &--closed {
-    display: none;
+    &::before,
+    &::after {
+      width: 50%;
+      transition: width 0.8s;
+    }
   }
+}
+
+.main-nav__list {
+  visibility: hidden;
+  z-index: 500;
 }
 
 .main-nav__wrapper {
@@ -41,58 +51,66 @@
   height: 100%;
 }
 
-.main-nav__menu-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 25px;
-  height: 25px;
-  margin-top: 10px;
-  background-color: transparent;
-  border: none;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    display: block;
-    height: 35px;
-    width: 3px;
-    background-color: #ffffff;
-    transform-origin: center center;
-  }
-
-  &::before {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
-  &::after {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-}
-
 .main-nav__item {
-  margin-bottom: 25px;
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
 
   .main-nav__link--active {
     color: #ffffff;
-
-    &::after {
-      background-color: #ffffff;
-      transition: 0.3s;
-    }
   }
 }
 
 .main-nav__link {
+  position: relative;
   display: block;
   padding-bottom: 16px;
   color: rgba(#ffffff, 0.7);
-  transition: 0.3s;
+  transition: color 0.3s;
 
-  &:hover {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 56px;
+    height: 3px;
+    background-color: #ffffff;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
+  }
+
+  &[href]:hover {
     color: #ffffff;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .main-nav__toggle {
+    width: 40px;
+    height: 35px;
+  }
+
+  .main-nav__link {
+    &::after {
+      width: 89px;
+      height: 4px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .main-nav__toggle-line {
+    &,
+    &::after,
+    &::before {
+      height: 5px;
+    }
   }
 }

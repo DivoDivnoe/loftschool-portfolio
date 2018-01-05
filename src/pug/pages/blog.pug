@@ -18,7 +18,7 @@ block variables
           "Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.",
           "Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям."
         ],
-        img: "img/blog-mobile@1x.jpg"
+        img: "img/blog-desktop@1x.jpg"
       },
       {
         title: "Приёмы в вёрстке, без которых не обходится ни один сайт",
@@ -41,21 +41,24 @@ block content
       h1.visually-hidden Блог
       include ../common/triangles
       +triangles("blog__triangles")
-      .blog__menu.blog__menu--closed
-        ul.blog__menu-list
+      .blog__content
+        .blog__menu.blog__menu--closed
+          ul.blog__menu-list
+            each item in articles
+              li.blog__menu-item
+                a.blog__menu-link(href=`#${item.title}`) #{item.title}
+          button.blog__menu-button
+            span.visually-hidden Меню блога
+        .container.blog__wrapper
           each item in articles
-            li.blog__menu-item
-              a.blog__menu-link(href=`#${item.title}`) #{item.title}
-        button.blog__menu-button
-      .container.blog__wrapper
-        each item in articles
-          article.blog__item
-            h2 
-              a(name=`${item.title}`) #{item.title}
-            time(datetime=`${item.date.datetime}`) #{item.date.date}
-            each part in item.text
-              p #{part}
-            if item.img
-              figure
-                img(src=`${item.img}`, alt="blog illustration", width="311", height="104")
+            article.blog__item
+              h2 
+                a(name=`${item.title}`) #{item.title}
+              time(datetime=`${item.date.datetime}`) #{item.date.date}
+              each part in item.text
+                p #{part}
+              if item.img
+                figure
+                  img(src=`${item.img}`, alt="blog illustration", width="716", height="104")
   include ../common/footer
+  +footer('blog-footer')

@@ -55,10 +55,9 @@ h2 {
 h3 {
   margin: 0;
   padding: 15px 0 10px 0;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 21px;
   line-height: calc(28 / 21);
-  font-family: 'Sansus Webissimo', 'Arial', sans-serif;
   text-align: center;
 }
 
@@ -82,7 +81,6 @@ img {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  width: 320px;
   height: 100%;
   margin: 0 auto;
 }
@@ -101,4 +99,52 @@ img {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+@media screen and (min-width: $tablet) {
+  body {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+
+  .container {
+    width: 720px;
+  }
+
+  h1 {
+    font-size: 49px;
+    line-height: calc(56 / 49);
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: calc(36 / 30);
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  body {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+
+  .container {
+    width: 1138px;
+  }
+
+  h1 {
+    font-size: 49px;
+    line-height: calc(56 / 49);
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: calc(36 / 30);
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .container {
+    width: 1740px;
+  }
 }

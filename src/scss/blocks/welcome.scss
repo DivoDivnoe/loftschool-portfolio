@@ -1,7 +1,24 @@
 .welcome {
-  height: 568px; //100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  min-height: 650px;
+}
+
+.welcome__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: #13315f url('../img/night-bg-mobile@1x.jpg') no-repeat center;
   background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url('../img/night-bg-mobile@2x.jpg');
+  }
 }
 
 .welcome__wrapper {
@@ -10,28 +27,121 @@
   height: 100%;
 }
 
+.welcome__parallax {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
 .welcome-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 30px 0;
+  padding: 10px 0;
 }
 
 .welcome-header__auth {
+  position: relative;
   padding: 7px 19px;
   font-weight: 500;
   border: 1px solid white;
   transition: background-color 0.3s;
+  visibility: visible;
 
-  &:hover,
-  &:focus {
-    padding-top: 8px;
-    padding-bottom: 8px;
+  &:hover {
+    padding: 8px 20px;
     background-color: $blue-hover;
     border: none;
   }
+
+  &--hidden {
+    visibility: hidden;
+  }
+}
+
+.welcome__user-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome__user-box {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1200;
+  transition: transform 1s;
+
+  &--rotated {
+    transform: rotateY(180deg);
+  }
+}
+
+.welcome__user,
+.welcome__form {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.welcome__user {
+  transform: translateY(-50%);
+}
+
+.welcome__form {
+  transform: translateY(-50%) rotateY(180deg);
 }
 
 .welcome-footer {
+  position: relative;
   margin-top: auto;
+}
+
+@media screen and (min-width: $tablet) {
+  .welcome__bg {
+    display: none;
+  }
+
+  .welcome__parallax {
+    display: block;
+  }
+
+  .welcome-header {
+    padding: 20px 0;
+  }
+
+  .welcome-header__auth {
+    margin-left: auto;
+    padding: 8px 27px 11px 27px;
+
+    &:hover,
+    &:focus {
+      padding: 9px 28px 12px 28px;
+    }
+  }
+
+  .welcome__user-wrapper {
+    width: 348px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .welcome-header {
+    padding: 24px 0;
+  }
+
+  .welcome__user-wrapper {
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .welcome-header {
+    padding: 24px 70px;
+  }
 }

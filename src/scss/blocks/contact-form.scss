@@ -1,0 +1,143 @@
+.contact-form {
+  position: relative;
+
+  form {
+    position: relative;
+  }
+}
+
+.contact-form__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(#dadbd6, 0.05) url('../img/about-bg-mobile@1x.jpg') no-repeat -225px -556px;
+  background-size: 768px;
+  filter: blur(1px);
+}
+
+.contact-form__title {
+  position: relative;
+  margin: 0 0 20px 0;
+  padding: 33px 0 16px 0;
+
+  &::after {
+    background-color: #ffffff;
+  }
+}
+
+.contact-form__fields {
+  width: 260px;
+  margin: 0 auto;
+}
+
+.contact-form__field-wrapper,
+.contact-form__message-wrapper {
+  margin-bottom: 20px;
+}
+
+.contact-form__field,
+.contact-form__message {
+  width: 100%;
+  color: #ffffff;
+  background-color: rgba(#ffffff, 0.07);
+  border: none;
+
+  &::placelholder {
+    color: rgba(#ffffff, 0.5);
+  }
+}
+
+.contact-form__field {
+  height: 40px;
+  padding: 0 20px;
+}
+
+.contact-form__message {
+  display: block;
+  height: 140px;
+  padding: 15px 20px;
+  resize: none;
+}
+
+.contact-form__buttons {
+  display: flex;
+}
+
+.contact-form__button {
+  width: 50%;
+  padding-top: 13px;
+  padding-bottom: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+
+  &--reset {
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(#ffffff, 0.05);
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .contact-form__bg {
+    background-image: url('../img/about-bg-tablet@1x.jpg');
+    background-size: 1200px;
+    background-position: -430px -510px;
+  }
+
+  .contact-form__title {
+    padding-top: 42px;
+    margin-bottom: 19px;
+  }
+
+  .contact-form__fields {
+    width: 308px;
+  }
+
+  .contact-form__field-wrapper,
+  .contact-form__message-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .contact-form__field {
+    height: 45px;
+    padding: 0 20px;
+  }
+
+  .contact-form__field,
+  .contact-form__message {
+    font-size: 14px;
+  }
+
+  .contact-form__message {
+    height: 130px;
+  }
+
+  .contact-form__button {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .contact-form__bg {
+    background-image: url('../img/about-bg-desktop@1x.jpg');
+    background-size: 1800px;
+    background-position: -711px -552px;
+  }
+
+  .contact-form__title {
+    padding-top: 38px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+  }
+
+  .contact-form__fields {
+    width: 340px;
+  }
+}

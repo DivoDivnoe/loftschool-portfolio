@@ -6,7 +6,6 @@
 .socials__item {
   display: flex;
   align-items: center;
-  width: 31px;
 
   &:not(:last-child) {
     margin-right: 27px;
@@ -14,7 +13,8 @@
 }
 
 .socials__link {
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 
   &:hover,
   &:focus {
@@ -25,12 +25,23 @@
 }
 
 .socials__icon {
-  display: flex;
-  align-items: center;
   fill: rgba(#ffffff, 0.5);
   transition: 0.3s;
 
   &:hover {
     fill: $darkBlue;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .socials__item {
+    &:not(:last-child) {
+      margin-right: 27px;
+    }
+  }
+
+  .socials__icon {
+    width: 31px;
+    height: 22px;
   }
 }

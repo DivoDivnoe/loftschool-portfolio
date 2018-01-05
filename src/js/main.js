@@ -1,3 +1,12 @@
+import addMenuHandlers from './main-menu';
+import flip from './flip';
+import parallax from './parallax';
+import blur from './blur';
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Hello');
+  addMenuHandlers();
+  flip();
+  parallax.mouseMove();
+  parallax.scroll();
+  blur();
 });
