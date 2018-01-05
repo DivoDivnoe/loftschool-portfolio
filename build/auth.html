@@ -10,50 +10,52 @@
     <div class="page-wrapper">
       <section class="auth">
         <div class="container auth__wrapper">
-          <div class="auth__form">
-            <h2 class="auth__title">Авторизуйтесь</h2>
-            <form action="#">
-              <div class="auth__field-wrapper">
-                <input class="auth__field" type="text" id="login" name="login" placeholder="Логин">
-                <label class="auth__field-picture" for="login">
-                  <svg class="auth__field-icon" fill="#c4cbcd" width="14" height="15">
-                    <use xlink:href="img/sprite.svg#icon-login"></use>
-                  </svg>
-                </label>
-              </div>
-              <div class="auth__field-wrapper">
-                <input class="auth__field" type="text" id="password" name="password" placeholder="Пароль">
-                <label class="auth__field-picture" for="password">
-                  <svg class="auth__field-icon" fill="#c4cbcd" width="17" height="16">
-                    <use xlink:href="img/sprite.svg#icon-password"></use>
-                  </svg>
-                </label>
-              </div>
-              <div class="auth__capture-wrapper">
-                <input class="auth__capture" type="checkbox" id="human" name="human" value="yes">
-                <label class="auth__capture-label" for="human">Я человек</label>
-              </div>
-              <div class="auth__confirm-wrapper">
-                <h3 class="auth__confirm-title">Вы точно не робот?</h3>
-                <div class="auth__confirm-controls">
-                  <div class="auth__confirm-item">
-                    <input class="auth__confirm" type="radio" id="is-robot" name="not-robot" value="yes" checked>
-                    <label class="auth__confirm-label" for="is-robot">Да</label>
-                  </div>
-                  <div class="auth__confirm-item">
-                    <input class="auth__confirm" type="radio" id="not-robot" name="not-robot" value="no">
-                    <label class="auth__confirm-label" for="not-robot">Не уверен</label>
+          <div class="auth__form-wrapper">
+            <div class="auth__form form">
+              <h2 class="form__title">Авторизуйтесь</h2>
+              <form action="#">
+                <div class="form__field-wrapper">
+                  <input class="form__field" type="text" id="login" name="login" placeholder="Логин">
+                  <label class="form__field-picture" for="login">
+                    <svg class="form__field-icon" fill="#c4cbcd" width="14" height="15">
+                      <use xlink:href="img/sprite.svg#icon-login"></use>
+                    </svg>
+                  </label>
+                </div>
+                <div class="form__field-wrapper">
+                  <input class="form__field" type="text" id="password" name="password" placeholder="Пароль">
+                  <label class="form__field-picture" for="password">
+                    <svg class="form__field-icon" fill="#c4cbcd" width="17" height="16">
+                      <use xlink:href="img/sprite.svg#icon-password"></use>
+                    </svg>
+                  </label>
+                </div>
+                <div class="form__capture-wrapper">
+                  <input class="form__capture" type="checkbox" id="human" name="human" value="yes">
+                  <label class="form__capture-label" for="human">Я человек</label>
+                </div>
+                <div class="form__confirm-wrapper">
+                  <h3 class="form__confirm-title">Вы точно не робот?</h3>
+                  <div class="form__confirm-controls">
+                    <div class="form__confirm-item">
+                      <input class="form__confirm" type="radio" id="is-robot" name="not-robot" value="yes" checked>
+                      <label class="form__confirm-label" for="is-robot">Да</label>
+                    </div>
+                    <div class="form__confirm-item">
+                      <input class="form__confirm" type="radio" id="not-robot" name="not-robot" value="no">
+                      <label class="form__confirm-label" for="not-robot">Не уверен</label>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="auth__menu"><a class="auth__menu-item button" href="index.html">На главную</a>
-                <button class="auth__menu-item auth__menu-item--submit button" type="submit">Войти</button>
-              </div>
-            </form>
+                <div class="form__menu"><a class="form__menu-item button" href="index.html">На главную</a>
+                  <button class="form__menu-item form__menu-item--submit button" type="submit">Войти</button>
+                </div>
+              </form>
+            </div>
           </div>
           <footer class="auth-footer">
                         <div class="index-footer__copyright copyright">
-                          <div class="container copyright__wrapper"><span class="copyright__item copyright__item--name">© Владимир Астахов</span><span class="copyright__item copyright__item--description">создано с любовью в LoftSchool</span><span class="copyright__item copyright__item--year">2017</span></div>
+                          <div class="container copyright__wrapper"><span class="copyright__item copyright__item--name">©  Андрей Иванов</span><span class="copyright__item copyright__item--description">создано с любовью в LoftSchool</span><span class="copyright__item copyright__item--year">2017</span></div>
                         </div>
           </footer>
         </div>

@@ -28,12 +28,11 @@
                                 </ul>
                               </div>
                   <nav class="main-nav">
-                    <button class="main-nav__toggle"><span class="visually-hidden">Главное меню</span></button>
-                    <div class="main-nav__menu main-nav__menu--closed">
+                    <button class="main-nav__toggle toggle"><span class="visually-hidden">Главное меню</span><span class="toggle-line"></span></button>
+                    <div class="main-nav__menu">
                       <div class="container main-nav__wrapper">
-                        <button class="main-nav__menu-close"></button>
                         <ul class="main-nav__list">
-                          <li class="main-nav__item"><a class="main-nav__link title title--underlined main-nav__link--active">Мои работы</a>
+                          <li class="main-nav__item"><a class="main-nav__link title main-nav__link--active">Мои работы</a>
                           </li>
                           <li class="main-nav__item"><a class="main-nav__link title" href="blog.html">Блог</a>
                           </li>
@@ -46,10 +45,18 @@
                     </div>
                   </nav>
                 </header>
-                <div class="hero__box">
-                  <div class="hero__picture"><img class="hero__image" src="img/me-mobile@1x.jpg" alt="Андрей Иванов" width="140" height="180"></div>
-                  <div class="hero__title">
-                    <div class="hero__title-name">Андрей Иванов</div><span class="hero__title-description">Личный сайт веб разработчика</span>
+                <div class="hero__bg"></div>
+                <div class="hero__box-wrapper">
+                  <div class="hero__box">
+                    <div class="hero__stars"><img class="hero__stars-image" src="img/svg/stars1.svg" width="281" height="167"></div>
+                    <div class="hero__picture">
+                      <picture>
+                        <source media="(min-width: 768px)" srcset="img/me-tablet@1x.jpg 1x, img/me-tablet@2x.jpg 2x"><img class="hero__image" src="img/me-mobile@1x.jpg" srcset="img/me-mobile@2x.jpg 2x" alt="Андрей Иванов" width="250" height="256">
+                      </picture>
+                    </div>
+                    <div class="hero__title">
+                      <div class="hero__title-name">Андрей Иванов</div><span class="hero__title-description">Личный сайт веб разработчика</span>
+                    </div>
                   </div>
                 </div>
                 <div class="hero__arrow-wrapper">
@@ -60,96 +67,120 @@
                   </button>
                 </div>
               </div>
-              <div class="hero__stars"><img class="hero__stars-image" src="img/svg/stars1.svg" width="281" height="167"></div>
             </section>
       <main class="page-main">
         <section class="portfolio">
-                    <svg class="portfolio__triangles triangles" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 38" preserveaspectratio="none" fill="#ffffff">
-                      <polygon class="triangle__left" points="0,0 0,38 160,38 160,27"></polygon>
-                      <polygon class="triangle__right" points="320,0 320,38 160,38 160,27"></polygon>
+                    <svg class="portfolio__triangles triangles" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 115" preserveaspectratio="none" fill="#ffffff">
+                      <polygon class="triangle__left portfolio__triangles--left" points="0,0 0,115 600,115 600,106"></polygon>
+                      <polygon class="triangle__right portfolio__triangles--right" points="1200,0 1200,115 600,115 600,106"></polygon>
                     </svg>
           <h1 class="portfolio__title title">Мои работы</h1>
-          <div class="portfolio__slider slider">
-            <ul class="slider__list">
-              <li class="slider__item">
-                <div class="slider__picture"><img class="slider__image" src="img/portfolio-item-mobile@1x.png" alt="Сайт школы онлайн образования" width="248" height="160"></div>
-                <div class="slider__content">
-                  <h3 class="slider__title title title--small title--underlined">Сайт школы онлайн образования</h3>
-                  <div class="slider__skills">HTML, CSS, Javascript</div>
-                </div><a class="slider__link button" href="#">Посмотреть сайт</a>
-              </li>
-              <li class="slider__item">
-                <div class="slider__picture"><img class="slider__image" src="img/portfolio-item-mobile@1x.png" alt="Сайт школы онлайн образования" width="248" height="160"></div>
-                <div class="slider__content">
-                  <h3 class="slider__title title title--small title--underlined">Сайт школы онлайн образования</h3>
-                  <div class="slider__skills">HTML, CSS, Javascript</div>
-                </div><a class="slider__link button" href="#">Посмотреть сайт</a>
-              </li>
-              <li class="slider__item">
-                <div class="slider__picture"><img class="slider__image" src="img/portfolio-item-mobile@1x.png" alt="Сайт школы онлайн образования" width="248" height="160"></div>
-                <div class="slider__content">
-                  <h3 class="slider__title title title--small title--underlined">Сайт школы онлайн образования</h3>
-                  <div class="slider__skills">HTML, CSS, Javascript</div>
-                </div><a class="slider__link button" href="#">Посмотреть сайт</a>
-              </li>
-            </ul>
-          </div>
-          <div class="portfolio__toggles">
-            <button class="portfolio__toggles-item portfolio__toggles-item--next">
-              <svg class="portfolio__toggles-icon" fill="#ffffff" width="43" height="27">
-                <use xlink:href="img/sprite.svg#icon-portf_arrow_down"></use>
-              </svg>
-            </button>
-            <button class="portfolio__toggles-item portfolio__toggles-item--previous">
-              <svg class="portfolio__toggles-icon" fill="#ffffff" width="43" height="27">
-                <use xlink:href="img/sprite.svg#icon-portf_arrow_up"></use>
-              </svg>
-            </button>
+          <div class="portfolio-main">
+            <div class="portfolio__slider slider">
+              <ul class="slider__list">
+                <li class="slider__item">
+                  <div class="slider__picture">
+                    <picture>
+                      <source media="(min-width: 1800px)" srcset="img/portfolio-item-desktop-large@1x.png 1x, img/portfolio-item-desktop-large@2x.png 2x">
+                      <source media="(min-width: 1200px)" srcset="img/portfolio-item-desktop@1x.png 1x, img/portfolio-item-desktop@2x.png 2x">
+                      <source media="(min-width: 768px)" srcset="img/portfolio-item-tablet@1x.png 1x, img/portfolio-item-tablet@2x.png 2x"><img class="slider__image" src="img/portfolio-item-mobile@1x.png" srcset="img/portfolio-item-mobile@2x.png 2x" alt="Сайт школы онлайн образования">
+                    </picture>
+                  </div>
+                  <div class="slider__content">
+                    <h3 class="slider__title title title--small title--underlined">Сайт школы онлайн образования</h3>
+                    <div class="slider__skills">HTML, CSS, Javascript</div><a class="slider__link button" href="#">Посмотреть сайт</a>
+                  </div>
+                </li>
+                <li class="slider__item">
+                  <div class="slider__picture">
+                    <picture>
+                      <source media="(min-width: 1800px)" srcset="img/portfolio-item-desktop-large@1x.png 1x, img/portfolio-item-desktop-large@2x.png 2x">
+                      <source media="(min-width: 1200px)" srcset="img/portfolio-item-desktop@1x.png 1x, img/portfolio-item-desktop@2x.png 2x">
+                      <source media="(min-width: 768px)" srcset="img/portfolio-item-tablet@1x.png 1x, img/portfolio-item-tablet@2x.png 2x"><img class="slider__image" src="img/portfolio-item-mobile@1x.png" srcset="img/portfolio-item-mobile@2x.png 2x" alt="Сайт школы онлайн образования">
+                    </picture>
+                  </div>
+                  <div class="slider__content">
+                    <h3 class="slider__title title title--small title--underlined">Сайт школы онлайн образования</h3>
+                    <div class="slider__skills">HTML, CSS, Javascript</div><a class="slider__link button" href="#">Посмотреть сайт</a>
+                  </div>
+                </li>
+                <li class="slider__item">
+                  <div class="slider__picture">
+                    <picture>
+                      <source media="(min-width: 1800px)" srcset="img/portfolio-item-desktop-large@1x.png 1x, img/portfolio-item-desktop-large@2x.png 2x">
+                      <source media="(min-width: 1200px)" srcset="img/portfolio-item-desktop@1x.png 1x, img/portfolio-item-desktop@2x.png 2x">
+                      <source media="(min-width: 768px)" srcset="img/portfolio-item-tablet@1x.png 1x, img/portfolio-item-tablet@2x.png 2x"><img class="slider__image" src="img/portfolio-item-mobile@1x.png" srcset="img/portfolio-item-mobile@2x.png 2x" alt="Сайт школы онлайн образования">
+                    </picture>
+                  </div>
+                  <div class="slider__content">
+                    <h3 class="slider__title title title--small title--underlined">Сайт школы онлайн образования</h3>
+                    <div class="slider__skills">HTML, CSS, Javascript</div><a class="slider__link button" href="#">Посмотреть сайт</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="portfolio__toggles">
+              <button class="portfolio__toggles-item portfolio__toggles-item--next">
+                <svg class="portfolio__toggles-icon" fill="#ffffff" width="43" height="27">
+                  <use xlink:href="img/sprite.svg#icon-portf_arrow_down"></use>
+                </svg>
+              </button>
+              <button class="portfolio__toggles-item portfolio__toggles-item--previous">
+                <svg class="portfolio__toggles-icon" fill="#ffffff" width="43" height="27">
+                  <use xlink:href="img/sprite.svg#icon-portf_arrow_up"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </section>
         <section class="reviews">
           <div class="container reviews__wrapper">
             <h2 class="reviews__title title">Что обо мне говорят</h2>
-            <article class="reviews__item">
-              <div class="reviews__picture">
-                <picture>
-                  <source media="(min-width: 768px)" srcset="img/kovalchuk-tablet@1x.jpg"><img class="reviews__image" src="img/kovalchuk-mobile@1x.jpg" alt="Ковальчук Дмитрий">
-                </picture>
-              </div>
-              <p>Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
-              <cite><b>Ковальчук Дмитрий</b>— основатель Loftschool</cite>
-            </article>
-            <article class="reviews__item">
-              <div class="reviews__picture">
-                <picture>
-                  <source media="(min-width: 768px)" srcset="img/sabantsev-tablet@1x.jpg"><img class="reviews__image" src="img/sabantsev-mobile@1x.jpg" alt="Сабанцев Владимир">
-                </picture>
-              </div>
-              <p>Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!</p>
-              <cite><b>Сабанцев Владимир</b>— преподаватель</cite>
-            </article>
-            <div class="reviews__contact-form contact-form">
-              <h2 class="contact-form__title title title--small title--underlined">Связаться со мной</h2>
-              <form action="#">
-                <div class="contact-form__fields">
-                  <div class="contact-form__field-wrapper">
-                    <label class="visually-hidden" for="name">Имя</label>
-                    <input class="contact-form__field" type="text" name="name" id="name" placeholder="Имя" required>
-                  </div>
-                  <div class="contact-form__field-wrapper">
-                    <label class="visually-hidden" for="email">Email</label>
-                    <input class="contact-form__field" type="email" name="email" id="email" placeholder="Email" required>
-                  </div>
-                  <div class="contact-form__field-wrapper">
-                    <label class="visually-hidden" for="message">Ваше сообщение</label>
-                    <textarea class="contact-form__message" name="message" id="message" placeholder="Ваше сообщение" required></textarea>
-                  </div>
+            <div class="reviews__articles">
+              <article class="reviews__item">
+                <div class="reviews__picture">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="img/kovalchuk-tablet@1x.jpg 1x, img/kovalchuk-tablet@2x.jpg 2x"><img class="reviews__image" src="img/kovalchuk-mobile@1x.jpg" srcset="img/kovalchuk-mobile@2x.jpg 2x" alt="Ковальчук Дмитрий">
+                  </picture>
                 </div>
-                <div class="contact-form__buttons">
-                  <button class="contact-form__button button" type="submit">Отправить</button>
-                  <button class="contact-form__button contact-form__button--reset button" type="reset">Очистить</button>
+                <p>Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+                <cite><b>Ковальчук Дмитрий</b>— основатель Loftschool</cite>
+              </article>
+              <article class="reviews__item">
+                <div class="reviews__picture">
+                  <picture>
+                    <source media="(min-width: 768px)" srcset="img/sabantsev-tablet@1x.jpg 1x, img/sabantsev-tablet@2x.jpg 2x"><img class="reviews__image" src="img/sabantsev-mobile@1x.jpg" srcset="img/sabantsev-mobile@2x.jpg 2x" alt="Сабанцев Владимир">
+                  </picture>
                 </div>
-              </form>
+                <p>Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!</p>
+                <cite><b>Сабанцев Владимир</b>— преподаватель</cite>
+              </article>
+            </div>
+            <div class="reviews_form-wrapper">
+              <div class="reviews__form contact-form">
+                <div class="contact-form__bg"></div>
+                <h2 class="contact-form__title title title--small title--underlined">Связаться со мной</h2>
+                <form action="#">
+                  <div class="contact-form__fields">
+                    <div class="contact-form__field-wrapper">
+                      <label class="visually-hidden" for="name">Имя</label>
+                      <input class="contact-form__field" type="text" name="name" id="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="contact-form__field-wrapper">
+                      <label class="visually-hidden" for="email">Email</label>
+                      <input class="contact-form__field" type="email" name="email" id="email" placeholder="Ваш email" required>
+                    </div>
+                    <div class="contact-form__field-wrapper">
+                      <label class="visually-hidden" for="message">Ваше сообщение</label>
+                      <textarea class="contact-form__message" name="message" id="message" placeholder="Ваше сообщение" required></textarea>
+                    </div>
+                  </div>
+                  <div class="contact-form__buttons">
+                    <button class="contact-form__button button" type="submit">Отправить</button>
+                    <button class="contact-form__button contact-form__button--reset button" type="reset">Очистить</button>
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="reviews__arrow-wrapper">
               <button class="reviews__arrow">
@@ -161,54 +192,54 @@
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <div class="footer__main">
-          <div class="container">
-            <div class="footer__item footer__item--description">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </div>
-            <div class="footer__item footer__item--links">
-                            <nav class="footer__menu">
-                              <ul class="footer__menu-list">
-                                <li class="footer__menu-item"><a class="footer__menu-link" href="works.html">Мои работы</a></li>
-                                <li class="footer__menu-item"><a class="footer__menu-link" href="about.html">Обо мне</a></li>
-                                <li class="footer__menu-item"><a class="footer__menu-link" href="blog.html">Блог</a></li>
-                                <li class="footer__menu-item"><a class="footer__menu-link" href="index.html">Авторизация</a></li>
-                              </ul>
-                            </nav>
-                            <div class="footer__socials socials">
-                              <ul class="socials__list">
-                                <li class="socials__item"><a class="socials__link" href="https://vk.com/id15900582" target="_blank"><span class="visually-hidden">Вконтакте</span>
-                                    <svg class="socials__icon socials__icon--vk" fill="#ffffff" width="31" height="17">
-                                      <use xlink:href="img/sprite.svg#icon-vk"></use>
-                                    </svg></a></li>
-                                <li class="socials__item"><a class="socials__link" href="https://github.com/DivoDivnoe" target="_blank"><span class="visually-hidden">Гитхаб</span>
-                                    <svg class="socials__icon socials__icon--github" fill="#ffffff" width="26" height="22">
-                                      <use xlink:href="img/sprite.svg#icon-github"></use>
-                                    </svg></a></li>
-                                <li class="socials__item"><a class="socials__link" href="#" target="_blank"><span class="visually-hidden">Инстаграм</span>
-                                    <svg class="socials__icon socials__icon--instagram" fill="#ffffff" width="24" height="22">
-                                      <use xlink:href="img/sprite.svg#icon-in"></use>
-                                    </svg></a></li>
-                              </ul>
-                            </div>
-            </div>
-            <div class="footer__item footer__item--contacts">
-              <ul class="footer__contacts-list">
-                <li class="footer__contacts-item"><a class="footer__contacts-link" href="skype:pilot297">pilot297</a>
-                </li>
-                <li class="footer__contacts-item"><a class="footer__contacts-link" href="mailto:andrey-tm203@mail.ru">andrey-tm203@mail.ru</a>
-                </li>
-                <li class="footer__contacts-item"><a class="footer__contacts-link" href="tel:+79213288085">+79213288085</a>
-                </li>
-                <li class="footer__contacts-item">г. Гатчина, ул. Чехова, 22
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-                <div class="footer__copyright copyright">
-                  <div class="container copyright__wrapper"><span class="copyright__item copyright__item--name">© Владимир Астахов</span><span class="copyright__item copyright__item--description">создано с любовью в LoftSchool</span><span class="copyright__item copyright__item--year">2017</span></div>
+            <footer class="footer portfolio-footer">
+              <div class="footer__main">
+                <div class="container footer__wrapper">
+                  <div class="footer__item footer__item--description">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</div>
+                  <div class="footer__item footer__item--links">
+                                  <nav class="footer__menu">
+                                    <ul class="footer__menu-list">
+                                      <li class="footer__menu-item"><a class="footer__menu-link" href="works.html">Мои работы</a></li>
+                                      <li class="footer__menu-item"><a class="footer__menu-link" href="about.html">Обо мне</a></li>
+                                      <li class="footer__menu-item"><a class="footer__menu-link" href="blog.html">Блог</a></li>
+                                      <li class="footer__menu-item"><a class="footer__menu-link" href="index.html">Авторизация</a></li>
+                                    </ul>
+                                  </nav>
+                                  <div class="footer__socials socials">
+                                    <ul class="socials__list">
+                                      <li class="socials__item"><a class="socials__link" href="https://vk.com/id15900582" target="_blank"><span class="visually-hidden">Вконтакте</span>
+                                          <svg class="socials__icon socials__icon--vk" fill="#ffffff" width="31" height="17">
+                                            <use xlink:href="img/sprite.svg#icon-vk"></use>
+                                          </svg></a></li>
+                                      <li class="socials__item"><a class="socials__link" href="https://github.com/DivoDivnoe" target="_blank"><span class="visually-hidden">Гитхаб</span>
+                                          <svg class="socials__icon socials__icon--github" fill="#ffffff" width="26" height="22">
+                                            <use xlink:href="img/sprite.svg#icon-github"></use>
+                                          </svg></a></li>
+                                      <li class="socials__item"><a class="socials__link" href="#" target="_blank"><span class="visually-hidden">Инстаграм</span>
+                                          <svg class="socials__icon socials__icon--instagram" fill="#ffffff" width="24" height="22">
+                                            <use xlink:href="img/sprite.svg#icon-in"></use>
+                                          </svg></a></li>
+                                    </ul>
+                                  </div>
+                  </div>
+                  <div class="footer__item footer__item--contacts">
+                    <ul class="footer__contacts-list">
+                      <li class="footer__contacts-item"><a class="footer__contacts-link" href="skype:pilot297">pilot297</a>
+                      </li>
+                      <li class="footer__contacts-item"><a class="footer__contacts-link" href="mailto:andrey-tm203@mail.ru">andrey-tm203@mail.ru</a>
+                      </li>
+                      <li class="footer__contacts-item"><a class="footer__contacts-link" href="tel:+79213288085">+79213288085</a>
+                      </li>
+                      <li class="footer__contacts-item">г. Гатчина, ул. Чехова, 22
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-      </footer>
+              </div>
+                      <div class="footer__copyright copyright">
+                        <div class="container copyright__wrapper"><span class="copyright__item copyright__item--name">©  Андрей Иванов</span><span class="copyright__item copyright__item--description">создано с любовью в LoftSchool</span><span class="copyright__item copyright__item--year">2017</span></div>
+                      </div>
+            </footer>
     </div>
     <script src="js/main.js"></script>
   </body>
