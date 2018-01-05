@@ -86,33 +86,37 @@ block content
       +triangles("about__triangles")
       .about__items
         article.about__item.about__item--description
-          h1.about__title.title Обо мне
-          figure.about__picture
-            img.about__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
-          .container.about__wrapper.about__wrapper--description
-            h2.about__item-title.title--small.title--underlined Кто я
-            .about__item-text
-              p Я веб разработчик из города Гатчина, Ленинградская область. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений.
-                |Мне нравится делать интересные и современные проекты. 
-              p Этот сайт я сделал в рамках обучения в Школе онлайн образования 
-                |LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .about__wrapper.about__wrapper--description
+            h1.about__title.title Обо мне
+            .about__content
+              figure.about__picture
+                picture
+                  source(media="(min-width: 768px)", srcset="img/me-tablet@1x.jpg 1x, img/me-tablet@2x.jpg 2x")
+                  img.about__image(src="img/me-mobile@1x.jpg", srcset="img/me-mobile@2x.jpg 2x", alt="Андрей Иванов")
+              h2.about__item-title.title--small.title--underlined Кто я
+              .about__item-text
+                p Я веб разработчик из города Гатчина, Ленинградская область. Мне 32 года. Я занимаюсь разработкой современных сайтов и приложений.
+                  |Мне нравится делать интересные и современные проекты. 
+                p Этот сайт я сделал в рамках обучения в Школе онлайн образования 
+                  |LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         article.about__item.about__item--skills
-          .container.about__wrapper.about__wrapper--skills
+          .about__wrapper.about__wrapper--text
             h2.about__item-title.title--small.title--underlined Чем я могу быть вам полезен
             .about__item-text
               p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте 
                 |по порядку.
           div.about-item__skills.skills
-            each skillArea in skillAreas
-              div.skills__item
-                h3.skills__title #{skillArea.title}
-                ul.skills__list
-                  each skill in skillArea.skills
-                    li.skills__list-item.skill
-                      span.skill__title #{skill.name}
-                      svg.skill__circle.circles(viewBox="0 0 110 110", width="110", height="110")
-                        circle.circle__first.circle(r="45", cx="50%", cy="50%", fill="none")
-                        circle(class=`circle__second circle circle-${skill.perc}`, r="45", cx="50%", cy="50%")
+            .about__wrapper.about__wrapper--skills
+              each skillArea in skillAreas
+                div.skills__item
+                  h3.skills__title #{skillArea.title}
+                  ul.skills__list
+                    each skill in skillArea.skills
+                      li.skills__list-item.skill
+                        span.skill__title #{skill.name}
+                        svg.skill__circle.circles(viewBox="0 0 110 110", width="110", height="110")
+                          circle.circle__first.circle(r="45", cx="50%", cy="50%", fill="none")
+                          circle(class=`circle__second circle circle-${skill.perc}`, r="45", cx="50%", cy="50%")
     section.contacts
       .contacts__box
         .contacts__box-wrapper

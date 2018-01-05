@@ -1,4 +1,4 @@
 mixin triangles(className)
   svg(class=`${className} triangles`, xmlns="http://www.w3.org/2000/svg", viewbox="0 0 1200 115", preserveaspectratio="none", fill="#ffffff")
-    polygon.triangle__left(points="0,0 0,115 600,115 600,106")
-    polygon.triangle__right(points="1200,0 1200,115 600,115 600,106")
+    polygon(class=`triangle__left ${className}--left`, points="0,0 0,115 600,115 600,106")
+    polygon(class=`triangle__right ${className}--right`, points="1200,0 1200,115 600,115 600,106")

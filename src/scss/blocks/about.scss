@@ -1,7 +1,6 @@
 .about {
   position: relative;
   color: #474b57;
-  background-color: #f2f0e8;
 }
 
 .about__title {
@@ -11,7 +10,7 @@
 
 .about__triangles {
   position: absolute;
-  top: 0;
+  top: 1px;
   left: 0;
   fill: #f2f0e8;
   transform: translateY(-100%);
@@ -19,27 +18,32 @@
 
 .about__picture {
   margin: 0 auto;
-  height: 283px;
-  overflow: hidden;
 }
 
 .about__image {
-  margin-top: -40px;
-  width: 100%;
+  width: 320px;
+  height: 328px;
 }
 
 .about__item {
-  width: 320px;
-  margin: 0 auto;
   padding-bottom: 8px;
 
   &--skills {
     background-color: #f4f5f0;
   }
 
+  &--description {
+    background-color: #f2f0e8;
+  }
+
   p {
     margin-bottom: 15px;
   }
+}
+
+.about__wrapper {
+  width: 320px;
+  margin: 0 auto;
 }
 
 .about__item-title {
@@ -62,8 +66,10 @@
   .about {
     font-size: 14px;
   }
-  .about__picture {
-    height: 417px;
+
+  .about__image {
+    width: 472px;
+    height: 483px;
   }
 
   .about__title {
@@ -80,13 +86,7 @@
   .about__item {
     padding-bottom: 33px;
 
-    &--description {
-      width: 472px;
-      margin: 0 auto;
-    }
-
     &--skills {
-      width: 596px;
       padding-bottom: 20px;
     }
 
@@ -97,8 +97,11 @@
   }
 
   .about__wrapper {
-    margin: 0 auto;
     width: 472px;
+
+    &--skills {
+      width: 596px;
+    }
   }
 
   .about-footer {
@@ -107,27 +110,24 @@
 }
 
 @media screen and (min-width: $desktop) {
+  .about__triangles {
+    &--right {
+      fill: #f4f5f0;
+    }
+  }
+
   .about__items {
     display: flex;
-    justify-content: space-between;
-    width: 1180px;
-    margin: 0 auto;
   }
 
   .about__item {
-    width: 580px;
+    width: 50%;
     margin: 0;
 
     p {
       margin-bottom: 10px;
       font-size: 16px;
       line-height: calc(24 / 16);
-    }
-
-    &--skills {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
     }
 
     &--description {
@@ -144,24 +144,73 @@
     margin-bottom: 24px;
   }
 
-  .about__picture,
-  .about__wrapper--description {
+  .about__content {
     width: 444px;
+    margin: 0 auto;
   }
 
   .about__wrapper {
-    &--skills {
-      width: 551px;
-      margin: 0 0 35px 0;
+    width: 551px;
+
+    &--description {
+      width: 443px;
+    }
+
+    &--text {
+      margin: 0 auto 35px auto;
     }
   }
 
   .about__picture {
-    height: 390px;
     margin-bottom: 37px;
+  }
+
+  .about__image {
+    width: 443px;
+    height: 454px;
   }
 
   .about-footer {
     margin-top: -188px;
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .about__item {
+    display: flex;
+
+    &--description {
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+
+    &--skills {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 40px;
+    }
+  }
+  .about__wrapper {
+    width: 840px;
+
+    &--description {
+      display: flex;
+      margin: 0;
+    }
+
+    &--text {
+      margin-left: 0;
+    }
+  }
+
+  .about__title {
+    width: 407px;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .about__content {
+    flex-shrink: 0;
+    width: 443px;
   }
 }

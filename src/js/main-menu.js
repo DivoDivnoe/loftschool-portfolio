@@ -1,7 +1,7 @@
-const toggle = document.querySelector('.toggle');
-const menu = document.querySelector('.main-nav__menu');
-
 const addMenuHandlers = () => {
+  const toggle = document.querySelector('.toggle');
+  const menu = document.querySelector('.main-nav__menu');
+
   if (!toggle) return false;
 
   const menuList = menu.querySelector('.main-nav__list');

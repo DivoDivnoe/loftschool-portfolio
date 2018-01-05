@@ -34,7 +34,7 @@ mixin hero(page)
                 each item in pages
                   li.main-nav__item
                     if item.title === page.title
-                      a.main-nav__link.title.title--underlined.main-nav__link--active #{item.title}
+                      a.main-nav__link.title.main-nav__link--active #{item.title}
                     else
                       a.main-nav__link.title(href=`${item.href}`) #{item.title}
       .hero__bg
@@ -43,7 +43,9 @@ mixin hero(page)
           .hero__stars
             img.hero__stars-image(src="img/svg/stars1.svg", width="281", height="167")
           .hero__picture
-            img.hero__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+            picture
+              source(media="(min-width: 768px)", srcset="img/me-tablet@1x.jpg 1x, img/me-tablet@2x.jpg 2x")
+              img.hero__image(src="img/me-mobile@1x.jpg", srcset="img/me-mobile@2x.jpg 2x", alt="Андрей Иванов", width="250", height="256")
           .hero__title
             if page.title === "Блог"
               .hero__name.title #{page.title}
