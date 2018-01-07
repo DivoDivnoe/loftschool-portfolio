@@ -1,4 +1,5 @@
 .skills__title {
+  padding: 0;
   margin: 0;
   font-weight: 500;
   font-size: 21px;
@@ -35,4 +36,43 @@
 
 .skill__circle {
   display: block;
+}
+
+@media screen and (min-width: $tablet) {
+  .skills__title {
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+
+  .skills__item {
+    margin-bottom: 17px;
+  }
+
+  .skills__list {
+    justify-content: center;
+  }
+
+  .skills__list-item {
+    &:not(:last-child) {
+      margin-right: 37px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .skills__title {
+    padding-top: 6px;
+    padding-bottom: 0;
+    font-size: 28px;
+    line-height: calc(32 / 28);
+    text-align: left;
+  }
+
+  .skills__list {
+    justify-content: flex-start;
+  }
+
+  .skills__item {
+    margin-bottom: 14px;
+  }
 }

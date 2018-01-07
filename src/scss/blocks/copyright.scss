@@ -30,3 +30,17 @@
     }
   }
 }
+
+@media screen and (min-width: $tablet) {
+  .copyright {
+    padding-bottom: 12px;
+  }
+
+  .copyright__item {
+    &:first-child {
+      &::after {
+        display: inline-block;
+      }
+    }
+  }
+}

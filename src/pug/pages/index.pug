@@ -24,22 +24,62 @@ block variables
 block content
   section.welcome
     h1.visually-hidden Сайт - портфолио Андрея Иванова
+    .welcome__bg
+    .parallax.welcome__parallax
+      .parallax__layer.parallax__layer--background
+        video(autoplay="autoplay", loop="loop").parallax__video
+          source(src="video/night.mp4", type="video/mp4")
+      .parallax__layer.parallax__layer--mountain
+        img.parallax__image(src="img/mountain@1x.png", alt="mountain", width="1200", height="332")
+      .parallax__layer.parallax__layer--forest
+        img.parallax__image(src="img/forest@1x.png", alt="forest", width="1200", height="263")
     .container.welcome__wrapper
       header.welcome-header
         a.welcome-header__auth(href="auth.html") Авторизоваться
-      .welcome__user.user
-        .user__picture
-          img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
-        .user__title
-          span.user__title-item.user__title-item--name Андрей Иванов
-          span.user__title-item.user__title-item--description Личный сайт веб разработчика
-        include ../common/socials
-        +socials('user__socials')
-        nav.welcome-nav
-          ul.welcome-nav__list
-            each item in welcomeMenu
-              li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
-                a.welcome-nav__link.button(href=item.link) #{item.title}
+      .welcome__user-wrapper
+        .welcome__user-box
+          .welcome__user.user
+            .user__picture
+              img.user__image(src="img/me-mobile@1x.jpg", alt="Андрей Иванов", width="140", height="180")
+            .user__title
+              span.user__title-item.user__title-item--name Андрей Иванов
+              span.user__title-item.user__title-item--description Личный сайт веб разработчика
+            include ../common/socials
+            +socials('user__socials')
+            nav.use__nav.welcome-nav
+              ul.welcome-nav__list
+                each item in welcomeMenu
+                  li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
+                    a(class=`welcome-nav__link welcome-nav__link--${item.mod} button`, href=item.link) #{item.title}
+          .welcome__form.form
+            h2.form__title Авторизуйтесь
+            form(action="#")
+              .form__field-wrapper
+                input.form__field(type="text", id="login", name="login", placeholder="Логин")
+                label.form__field-picture(for="login")
+                  svg.form__field-icon(fill="#c4cbcd", width="14", height="15")
+                    use(xlink:href="img/sprite.svg#icon-login")
+              .form__field-wrapper
+                input.form__field(type="text", id="password" name="password", placeholder="Пароль")
+                label.form__field-picture(for="password")
+                  svg.form__field-icon(fill="#c4cbcd", width="17", height="16")
+                    use(xlink:href="img/sprite.svg#icon-password")
+              .form__capture-wrapper
+                input.form__capture(type="checkbox", id="human", name="human", value="yes")
+                label.form__capture-label(for="human") Я человек
+              .form__confirm-wrapper
+                h3.form__confirm-title Вы точно не робот?
+                .form__confirm-controls
+                  .form__confirm-item
+                    input.form__confirm(type="radio", id="is-robot", name="not-robot", value="yes", checked)
+                    label.form__confirm-label(for="is-robot") Да
+                  .form__confirm-item
+                    input.form__confirm(type="radio", id="not-robot", name="not-robot", value="no")
+                    label.form__confirm-label(for="not-robot") Не уверен
+              .form__menu
+                a.form__menu-item.button(href="index.html") На главную
+                //button.form__menu-item.form__menu-item--submit.button(type="submit") Войти
+                a(href="admin.html").form__menu-item.form__menu-item--submit.button() Войти
       footer.welcome-footer
         include ../common/copyright
         +copyright("index-footer__copyright")

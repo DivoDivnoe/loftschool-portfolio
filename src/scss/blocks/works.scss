@@ -4,9 +4,16 @@
   color: #474b57;
 }
 
+.portfolio-main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 650px;
+}
+
 .portfolio__triangles {
   position: absolute;
-  top: 0;
+  top: 1px;
   left: 0;
   fill: rgba(#0d1120, 0.85);
   transform: translateY(-100%);
@@ -16,7 +23,7 @@
   position: relative;
   margin: 0;
   padding-top: 21px;
-  padding-bottom: 31px;
+  padding-bottom: 34px;
   color: #ffffff;
   background-color: rgba(#0d1120, 0.85);
 
@@ -26,18 +33,23 @@
     top: 50%;
     left: 50%;
     display: block;
-    width: 129px;
+    width: 130px;
     height: 85px;
     background: url('../img/svg/stars2.svg') no-repeat center;
     background-size: contain;
     opacity: 0.15;
-    transform: translate(-50%, -50%) rotate(180deg);
+    transform: translate(-50%, -50%) rotate(190deg);
     z-index: 100;
   }
 }
 
+.portfolio__slider {
+  flex: 1;
+}
+
 .portfolio__toggles {
   display: flex;
+  margin-top: auto;
 }
 
 .portfolio__toggles-item {
@@ -57,14 +69,90 @@
     background-color: rgba(#7e7f8a, 0.7);
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     .portfolio__toggles-icon {
       transform: scale(1.1);
     }
+  }
+
+  &:active {
+    box-shadow: inset 0 0 10px 0 rgba(black, 0.5);
   }
 }
 
 .portfolio__toggles-icon {
   transition: transform 0.3s;
+}
+
+.portfolio-footer {
+  margin-top: -346px;
+}
+
+@media screen and (min-width: $tablet) {
+  .portfolio {
+    margin-top: -129px;
+  }
+
+  .portfolio__title {
+    padding-top: 35px;
+    padding-bottom: 39px;
+
+    &::before {
+      top: 0;
+      width: 166px;
+      height: 109px;
+      transform: translateX(-50%) rotate(190deg);
+    }
+  }
+
+  .portfolio__toggles {
+    height: 20%;
+  }
+
+  .portfolio__toggles-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .portfolio-footer {
+    margin-top: -230px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .portfolio {
+    margin-top: -173px;
+  }
+
+  .portfolio-main {
+    position: relative;
+    align-items: flex-end;
+    height: 100vh;
+  }
+
+  .portfolio__title {
+    padding-top: 47px;
+    padding-bottom: 57px;
+
+    &::before {
+      left: 48%;
+      width: 262px;
+      height: 171px;
+    }
+  }
+
+  .portfolio__slider,
+  .portfolio__toggles {
+    width: 50%;
+  }
+
+  .portfolio__toggles {
+    height: 225px;
+  }
+
+  .portfolio-footer {
+    margin-top: -188px;
+  }
 }

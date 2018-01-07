@@ -1,5 +1,15 @@
 .reviews {
+  padding-bottom: 346px;
   background: #12171f url('../img/about-bg-mobile@1x.jpg') no-repeat top center;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url('../img/about-bg-mobile@2x.jpg');
+  }
+}
+
+.reviews_form-wrapper {
+  overflow: hidden;
 }
 
 .reviews__item {
@@ -21,6 +31,16 @@
       display: block;
     }
   }
+
+  a {
+    font-weight: 500;
+    color: blue;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .reviews__title {
@@ -34,75 +54,6 @@
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-}
-
-.contact-form__title {
-  margin: 0 0 20px 0;
-  padding: 33px 0 16px 0;
-
-  &::after {
-    background-color: #ffffff;
-  }
-}
-
-.contact-form {
-  background-color: rgba(#dadbd6, 0.05);
-}
-
-.contact-form__fields {
-  width: 260px;
-  margin: 0 auto;
-}
-
-.contact-form__field-wrapper,
-.contact-form__message-wrapper {
-  margin-bottom: 20px;
-}
-
-.contact-form__field,
-.contact-form__message {
-  width: 100%;
-  color: #ffffff;
-  background-color: rgba(#ffffff, 0.07);
-  border: none;
-
-  &::placelholder {
-    color: rgba(#ffffff, 0.5);
-  }
-}
-
-.contact-form__field {
-  height: 40px;
-  padding: 0 20px;
-}
-
-.contact-form__message {
-  display: block;
-  height: 140px;
-  padding: 15px 20px;
-  resize: none;
-}
-
-.contact-form__buttons {
-  display: flex;
-}
-
-.contact-form__button {
-  width: 50%;
-  padding-top: 13px;
-  padding-bottom: 12px;
-  font-weight: 500;
-  font-size: 16px;
-  color: #ffffff;
-
-  &--reset {
-    background-color: transparent;
-
-    &:hover,
-    &:focus {
-      background-color: rgba(#ffffff, 0.05);
-    }
-  }
 }
 
 .reviews__arrow-wrapper {
@@ -129,4 +80,97 @@
   opacity: 0.7;
   transform: rotate(180deg);
   transition: opacity 0.3s;
+}
+
+@media screen and (min-width: $tablet) {
+  .reviews {
+    padding-bottom: 230px;
+    background-image: url('../img/about-bg-tablet@1x.jpg');
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url('../img/about-bg-tablet@2x.jpg');
+    }
+  }
+
+  .reviews_form-wrapper {
+    width: 348px;
+    margin: 0 auto;
+  }
+
+  .reviews__title {
+    padding: 38px 140px 41px 140px;
+  }
+
+  .reviews__articles {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .reviews__item {
+    margin-bottom: 44px;
+    width: 348px;
+    font-size: 14px;
+
+    p {
+      margin-top: 17px;
+      line-height: calc(24 / 14);
+    }
+
+    cite {
+      font-size: 16px;
+    }
+  }
+
+  .reviews__picture {
+    width: 77px;
+    height: 77px;
+  }
+
+  .reviews__arrow-wrapper {
+    padding-top: 69px;
+    padding-bottom: 45px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .reviews {
+    padding-bottom: 188px;
+    background-image: url('../img/about-bg-desktop@1x.jpg');
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url('../img/about-bg-desktop@2x.jpg');
+    }
+  }
+
+  .reviews_form-wrapper {
+    width: 380px;
+  }
+
+  .reviews__wrapper {
+    width: 780px;
+  }
+
+  .reviews__title {
+    padding: 56px 140px;
+  }
+
+  .reviews__item {
+    margin-bottom: 67px;
+    width: 380px;
+    font-size: 16px;
+
+    p {
+      margin-bottom: 15px;
+      line-height: calc(26 / 16);
+    }
+
+    cite {
+      font-size: 16px;
+      line-height: calc(24 / 16);
+    }
+  }
+
+  .reviews__arrow-wrapper {
+    padding-bottom: 64px;
+  }
 }

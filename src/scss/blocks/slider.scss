@@ -1,4 +1,5 @@
 .slider {
+  display: flex;
   color: #474b57;
 }
 
@@ -9,23 +10,40 @@
 
 .slider__item {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   text-align: center;
 }
 
 .slider__picture {
   display: flex;
-  padding: 49px 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 55%;
   background-color: #e3e2de;
 }
 
 .slider__image {
+  width: 248px;
+  height: 160px;
   margin: auto;
+}
+
+.slider__content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__content-box {
+  width: 320px;
 }
 
 .slider__title {
   margin: 0;
-  padding: 27px 0 16px 0;
+  padding: 0 0 16px 0;
 }
 
 .slider__skills {
@@ -39,8 +57,6 @@
 .slider__link {
   position: relative;
   padding: 8px 19px 8px 52px;
-  margin-bottom: 30px;
-  font-weight: 500;
   color: #ffffff;
 
   &::before {
@@ -53,5 +69,97 @@
     height: 19px;
     background: url('../img/svg/link.svg') no-repeat center;
     transform: translateY(-50%);
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .slider__picture {
+    height: 65%;
+
+    picture {
+      height: 75%;
+    }
+  }
+
+  .slider__image {
+    width: auto;
+    max-height: 100%;
+    min-height: 100%;
+  }
+
+  .slider__content-box {
+    width: auto;
+  }
+
+  .slider__skills {
+    padding-top: 19px;
+    padding-bottom: 26px;
+  }
+
+  .slider__link {
+    padding-top: 10px;
+    padding-bottom: 11px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .slider {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .slider__list {
+    flex: 1;
+  }
+
+  .slider__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slider__picture {
+    flex: 1;
+    align-items: center;
+    padding: 0;
+
+    picture {
+      height: auto;
+    }
+  }
+
+  .slider__image {
+    width: 496px;
+    height: 321px;
+  }
+
+  .slider__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .slider__title {
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 26px;
+  }
+
+  .slider__skills {
+    padding-top: 21px;
+    padding-bottom: 55px;
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .slider__image {
+    width: 643px;
+    height: 416px;
   }
 }

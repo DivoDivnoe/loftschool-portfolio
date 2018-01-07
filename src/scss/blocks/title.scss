@@ -27,3 +27,34 @@
     }
   }
 }
+
+@media screen and (min-width: $tablet) {
+  .title {
+    font-size: 49px;
+    line-height: calc(56 / 49);
+
+    &--small {
+      font-size: 30px;
+      line-height: calc(36 / 30);
+    }
+
+    &--underlined {
+      &::after {
+        width: 89px;
+        height: 4px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .title {
+    font-size: 63px;
+    line-height: calc(70 / 63);
+
+    &--small {
+      font-size: 35px;
+      line-height: calc(40 / 35);
+    }
+  }
+}

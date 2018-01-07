@@ -40,6 +40,10 @@ const paths = {
   js: {
     src: 'src/js/**/*.js',
     dest: 'build/js'
+  },
+  video: {
+    src: 'src/video/**/*',
+    dest: 'build/video'
   }
 };
 
@@ -60,6 +64,10 @@ gulp.task('copy-img', () => {
 
 gulp.task('copy-fonts', () => {
   return gulp.src(paths.fonts.src).pipe(gulp.dest(paths.fonts.dest));
+});
+
+gulp.task('copy-video', () => {
+  return gulp.src(paths.video.src).pipe(gulp.dest(paths.video.dest));
 });
 
 gulp.task('scss', () => {
@@ -128,8 +136,10 @@ gulp.task('sprite', () => {
             {
               removeAttrs: {
                 attrs: ['path:fill', 'g:fill']
-              },
-              removeEditorsNSData: true
+              }
+            },
+            {
+              removeViewBox: false
             }
           ]
         })
@@ -143,7 +153,9 @@ gulp.task('sprite', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.pug.src, gulp.series('pug'));
   gulp.watch(paths.scss.src, gulp.series('scss'));
-  gulp.watch(paths.img.src, gulp.series('copy-img', 'sprite'));
+  gulp.watch(paths.video.src, gulp.series('copy-video'));
+  gulp.watch(paths.img.src, gulp.series('copy-img'));
+  gulp.watch('src/img/icons/**/*.svg', gulp.series('sprite'));
   gulp.watch(paths.js.src, gulp.series('js'));
 });
 
@@ -158,7 +170,15 @@ gulp.task(
   'default',
   gulp.series(
     'clean',
-    gulp.parallel('copy-img', 'sprite', 'copy-fonts', 'scss', 'pug', 'js'),
+    gulp.parallel(
+      'copy-img',
+      'copy-video',
+      'sprite',
+      'copy-fonts',
+      'scss',
+      'pug',
+      'js'
+    ),
     gulp.parallel('watch', 'serve')
   )
 );
