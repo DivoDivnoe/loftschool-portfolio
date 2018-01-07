@@ -7,10 +7,19 @@
   border: none;
   opacity: 0.7;
   cursor: pointer;
+  transition: opacity 0.3s;
 
   &:hover,
   &:focus {
     opacity: 1;
+  }
+
+  &:active {
+    .toggle-line,
+    .toggle-line::before,
+    .toggle-line::after {
+      background-color: #ffffff;
+    }
   }
 
   z-index: 10000;

@@ -16,13 +16,14 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 89%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 17px;
   background-color: #253468;
   z-index: 10000;
+  transition: transform 0.5s ease-in-out;
 
   &--closed {
     transform: translateX(-100%);
@@ -94,6 +95,16 @@
       max-width: initial;
     }
   }
+
+  a {
+    font-weight: 500;
+    color: blue;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -115,6 +126,10 @@
       }
     }
   }
+
+  .blog__menu {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: $desktop) {
@@ -123,6 +138,7 @@
   }
 
   .blog__content {
+    position: relative;
     display: flex;
     width: 1180px;
     margin: 0 auto;
@@ -135,6 +151,15 @@
     padding: 8px 0 0 0;
     background-color: transparent;
     transform: none;
+
+    &--fixed {
+      position: fixed;
+      left: initial;
+
+      & + .blog__wrapper {
+        padding-left: 250px;
+      }
+    }
   }
 
   .blog__menu-item {

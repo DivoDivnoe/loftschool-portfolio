@@ -31,6 +31,16 @@
       display: block;
     }
   }
+
+  a {
+    font-weight: 500;
+    color: blue;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .reviews__title {

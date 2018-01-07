@@ -131,9 +131,10 @@ block content
                     source(media="(min-width: 768px)", srcset=`${item.img.tablet.normal} 1x, ${item.img.tablet.retina} 2x`)
                     img.slider__image(src=`${item.img.mobile.normal}`, srcset=`${item.img.mobile.retina} 2x`, alt=`${item.title}`)
                 .slider__content
-                  h3.slider__title.title.title--small.title--underlined #{item.title}
-                  .slider__skills #{item.skills.join(", ")}
-                  a.slider__link.button(href=`${item.link}`) Посмотреть сайт
+                  .slider__content-box
+                    h3.slider__title.title.title--small.title--underlined #{item.title}
+                    .slider__skills #{item.skills.join(", ")}
+                    a.slider__link.button(href=`${item.link}`) Посмотреть сайт
         .portfolio__toggles
           button.portfolio__toggles-item.portfolio__toggles-item--next
             svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
