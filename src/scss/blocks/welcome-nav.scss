@@ -6,18 +6,22 @@
 .welcome-nav__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: stretch;
 }
 
 .welcome-nav__item {
+  flex: 1;
   display: flex;
 
-  &:not(:nth-child(3n)) {
+  &--works {
+    flex: 5;
     border-right: 2px solid rgba(#dee3e7, 0.5);
   }
 
-  &:nth-child(3n) {
-    flex-grow: 1;
+  &--about {
+    flex: 4;
+    border-right: 2px solid rgba(#dee3e7, 0.5);
   }
 }
 

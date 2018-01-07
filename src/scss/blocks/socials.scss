@@ -16,10 +16,15 @@
   display: flex;
   align-items: center;
 
-  &:hover,
-  &:focus {
+  &:hover {
     .socials__icon {
       fill: $darkBlue;
+    }
+  }
+
+  &:active {
+    .socials__icon {
+      fill: lighten($darkBlue, 10%);
     }
   }
 }
@@ -27,10 +32,6 @@
 .socials__icon {
   fill: rgba(#ffffff, 0.5);
   transition: 0.3s;
-
-  &:hover {
-    fill: $darkBlue;
-  }
 }
 
 @media screen and (min-width: $tablet) {

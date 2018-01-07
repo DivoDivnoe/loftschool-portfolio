@@ -1,10 +1,6 @@
-const addMenuHandlers = () => {
-  const toggle = document.querySelector('.toggle');
-  const menu = document.querySelector('.main-nav__menu');
-
-  if (!toggle) return false;
-
+const addMenuHandlers = menu => {
   const menuList = menu.querySelector('.main-nav__list');
+  const toggle = document.querySelector('.toggle');
 
   const appearMenuHandler = evt => {
     if (evt.propertyName !== 'width') return false;

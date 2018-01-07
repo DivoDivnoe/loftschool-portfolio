@@ -1,8 +1,4 @@
-const mouseMove = () => {
-  const parallaxContainer = document.querySelector('.parallax');
-
-  if (!parallaxContainer) return false;
-
+const mouseMove = parallaxContainer => {
   const layers = parallaxContainer.children;
   const moveLayers = evt => {
     const initialCoords = {
@@ -32,17 +28,12 @@ const mouseMove = () => {
 
   if (window.innerWidth >= 768) {
     window.addEventListener('mousemove', moveLayers);
-  } else {
-    window.removeEventListener('mousemove', moveLayers);
   }
 };
 
-const scroll = () => {
-  const bg = document.querySelector('.hero__bg');
-
-  if (!bg) return false;
-
-  const user = document.querySelector('.hero__box');
+const scroll = hero => {
+  const bg = hero.querySelector('.hero__bg');
+  const user = hero.querySelector('.hero__box');
 
   const move = (block, windowScroll, strafeAmount) => {
     const strafe = -windowScroll * strafeAmount + 'px';

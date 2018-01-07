@@ -50,7 +50,7 @@ block content
               ul.welcome-nav__list
                 each item in welcomeMenu
                   li(class=`welcome-nav__item welcome-nav__item--${item.mod}`)
-                    a.welcome-nav__link.button(href=item.link) #{item.title}
+                    a(class=`welcome-nav__link welcome-nav__link--${item.mod} button`, href=item.link) #{item.title}
           .welcome__form.form
             h2.form__title Авторизуйтесь
             form(action="#")
@@ -78,7 +78,8 @@ block content
                     label.form__confirm-label(for="not-robot") Не уверен
               .form__menu
                 a.form__menu-item.button(href="index.html") На главную
-                button.form__menu-item.form__menu-item--submit.button(type="submit") Войти
+                //button.form__menu-item.form__menu-item--submit.button(type="submit") Войти
+                a(href="admin.html").form__menu-item.form__menu-item--submit.button() Войти
       footer.welcome-footer
         include ../common/copyright
         +copyright("index-footer__copyright")
