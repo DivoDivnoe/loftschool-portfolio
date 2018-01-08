@@ -160,17 +160,20 @@ block content
           .reviews__form.contact-form
             .contact-form__bg
             h2.contact-form__title.title.title--small.title--underlined Связаться со мной
-            form(action="#")
+            form#review-form(action="#", method="POST")
               .contact-form__fields
                 .contact-form__field-wrapper
                   label.visually-hidden(for="name") Имя
-                  input.contact-form__field(type="text", name="name", id="name", placeholder="Ваше имя", required)
+                  input.contact-form__field(type="text", name="name", id="name", placeholder="Ваше имя")
+                  .contact-form__field-error.popup-error Вы не ввели Имя
                 .contact-form__field-wrapper
                   label.visually-hidden(for="email") Email
-                  input.contact-form__field(type="email", name="email", id="email", placeholder="Ваш email", required)
+                  input.contact-form__field(type="email", name="email", id="email", placeholder="Ваш email")
+                  .contact-form__field-error.popup-error Вы не ввели email
                 .contact-form__field-wrapper
                   label.visually-hidden(for="message") Ваше сообщение
-                  textarea.contact-form__message(name="message", id="message", placeholder="Ваше сообщение", required)
+                  textarea.contact-form__message(name="message", id="message", placeholder="Ваше сообщение")
+                  .contact-form__field-error.popup-error Вы не ввели сообщение
               .contact-form__buttons
                 button.contact-form__button.button(type="submit") Отправить
                 button.contact-form__button.contact-form__button--reset.button(type="reset") Очистить
@@ -180,3 +183,9 @@ block content
               use(xlink:href="img/sprite.svg#icon-arrow_down")
   include ../common/footer
   +footer('portfolio-footer')
+  .preloader
+    .preloader__animation
+      svg.preloader__icon(width="52.586", height="63.73", viewBox="0 0 52.586 63.73")
+        circle.preloader__circle(stroke="#ffffff", stroke-width="2.5864", stroke-miterlimit="10", cx="26.293", cy="37.438", r="25", fill="none")
+        circle.preloader__ball(cx="26.293", cy="4.5", r="4.5", fill="#ffffff")
+      .preloader__percents 100%

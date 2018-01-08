@@ -122,7 +122,9 @@ gulp.task('js', () => {
         })
       })
     )
+    .pipe(sourcemaps.init())
     .pipe(gulpWebpack(webpackConfig, webpack))
+    .pipe(sourcemaps.write(''))
     .pipe(gulp.dest(paths.js.dest));
 });
 
