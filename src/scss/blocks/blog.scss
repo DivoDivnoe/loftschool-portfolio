@@ -85,6 +85,16 @@
   p {
     margin: 9px 0;
     line-height: calc(21 / 14);
+
+    a {
+      font-weight: 500;
+      color: blue;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   figure {
@@ -93,16 +103,6 @@
 
     img {
       max-width: initial;
-    }
-  }
-
-  a {
-    font-weight: 500;
-    color: blue;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
     }
   }
 }

@@ -20,6 +20,7 @@
 
 mixin hero(page)
   section.hero
+    h2.visually-hidden Сайт портфолио Андрея Иванова
     .container.hero__wrapper
       header.hero__header.header
         include ../common/socials
@@ -41,7 +42,7 @@ mixin hero(page)
       .hero__box-wrapper
         .hero__box
           .hero__stars
-            img.hero__stars-image(src="img/svg/stars1.svg", width="281", height="167")
+            img.hero__stars-image(src="img/svg/stars1.svg", alt="stars", width="281", height="167")
           .hero__picture
             picture
               source(media="(min-width: 768px)", srcset="img/me-tablet@1x.jpg 1x, img/me-tablet@2x.jpg 2x")

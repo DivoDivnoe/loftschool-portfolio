@@ -68,8 +68,12 @@
 }
 
 .hero__arrow-wrapper {
-  position: relative;
+  position: absolute;
+  bottom: 29%;
+  left: 50%;
   text-align: center;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .hero__arrow {
