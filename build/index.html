@@ -53,7 +53,7 @@
               </div>
               <div class="welcome__form form">
                 <h2 class="form__title">Авторизуйтесь</h2>
-                <form action="#">
+                <form id="form" action="#">
                   <div class="form__field-wrapper">
                     <input class="form__field" type="text" id="login" name="login" placeholder="Логин">
                     <label class="form__field-picture" for="login">
@@ -61,6 +61,7 @@
                         <use xlink:href="img/sprite.svg#icon-login"></use>
                       </svg>
                     </label>
+                    <div class="form__field-error popup-error">Вы не ввели логин</div>
                   </div>
                   <div class="form__field-wrapper">
                     <input class="form__field" type="text" id="password" name="password" placeholder="Пароль">
@@ -69,6 +70,7 @@
                         <use xlink:href="img/sprite.svg#icon-password"></use>
                       </svg>
                     </label>
+                    <div class="form__field-error popup-error">Вы не ввели пароль</div>
                   </div>
                   <div class="form__capture-wrapper">
                     <input class="form__capture" type="checkbox" id="human" name="human" value="yes">
@@ -88,7 +90,7 @@
                     </div>
                   </div>
                   <div class="form__menu"><a class="form__menu-item button" href="index.html">На главную</a>
-                    <!--button.form__menu-item.form__menu-item--submit.button(type="submit") Войти--><a class="form__menu-item form__menu-item--submit button" href="admin.html">Войти</a>
+                    <button class="form__menu-item form__menu-item--submit button" type="submit">Войти</button>
                   </div>
                 </form>
               </div>
@@ -101,6 +103,15 @@
           </footer>
         </div>
       </section>
+      <div class="preloader">
+        <div class="preloader__animation">
+          <svg class="preloader__icon" width="52.586" height="63.73" viewBox="0 0 52.586 63.73">
+            <circle class="preloader__circle" stroke="#ffffff" stroke-width="2.5864" stroke-miterlimit="10" cx="26.293" cy="37.438" r="25" fill="none"></circle>
+            <circle class="preloader__ball" cx="26.293" cy="4.5" r="4.5" fill="#ffffff"></circle>
+          </svg>
+          <div class="preloader__percents">0%</div>
+        </div>
+      </div>
     </div>
     <script src="js/main.js"></script>
   </body>
