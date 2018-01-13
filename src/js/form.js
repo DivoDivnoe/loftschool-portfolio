@@ -5,6 +5,7 @@ const load = (success, error, data, url) => {
     xhr.responseType = 'json';
     xhr.timeout = 10000;
     xhr.open('POST', url);
+    xhr.setRequestHeader('Content-type', 'application/json');
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         resolve(xhr.response);
@@ -78,7 +79,7 @@ const validateSuccess = (elems, url) => {
 
   load(
     response => console.log(response),
-    response => console.log(response),
+    error => console.log(error),
     JSON.stringify(JSON.stringify(params)),
     url
   );

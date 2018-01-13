@@ -3,6 +3,7 @@ extends ../_template
 block variables
   include ../common/variables
   - 
+    var title = "Обо мне";
     var contacts = [
       {
         href: "skype:pilot297",
@@ -34,12 +35,13 @@ block content
   +hero(page)
   main.page-main
     section.about
+      h1.visually-hidden Об Андрее Иванове
       include ../common/triangles
       +triangles("about__triangles")
       .about__items
         article.about__item.about__item--description
           .about__wrapper.about__wrapper--description
-            h1.about__title.title Обо мне
+            h2.about__title.title Обо мне
             .about__content
               figure.about__picture
                 picture
@@ -86,7 +88,7 @@ block content
                     svg.contacts__icon(fill="#0548be", width="34", height="34")
                       use(xlink:href=`${item.icon}`)
                     |#{item.text}
-      iframe.contacts__map(src="https://snazzymaps.com/embed/36445", width="100%", height="515", style="border:none;")
+      iframe.contacts__map(src="https://snazzymaps.com/embed/36445", height="515", style="border:none;")
   include ../common/footer
   +footer('about-footer')
   .preloader

@@ -1,23 +1,23 @@
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const BabelPlugin = require('babel-webpack-plugin');
 
-const config = {
+module.exports = {
   output: {
     filename: 'main.js'
   },
-
+  devtool: 'source-map',
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: '/node-modules/'
+      }
+    ]
+  },
   plugins: [
-    new BabelPlugin({
-      test: /\.js$/,
-      presets: ['es2015'],
-      sourceMaps: false,
-      compact: false
-    }),
     new UglifyJsPlugin({
       sourceMap: true
     })
   ]
 };
-
-module.exports = config;

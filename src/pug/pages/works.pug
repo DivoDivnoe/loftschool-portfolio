@@ -2,73 +2,29 @@ extends ../_template
 
 block variables
   - 
+    var title = "Мои работы";
     var slider = [
       {
         title: "Сайт школы онлайн образования",
-        img: {
-          mobile: {
-            normal: "img/portfolio-item-mobile@1x.png",
-            retina: "img/portfolio-item-mobile@2x.png"
-          },
-          tablet: {
-            normal: "img/portfolio-item-tablet@1x.png",
-            retina: "img/portfolio-item-tablet@2x.png"
-          },
-          desktop: {
-            normal: "img/portfolio-item-desktop@1x.png",
-            retina: "img/portfolio-item-desktop@2x.png"
-          },
-          desktopLarge: {
-            normal: "img/portfolio-item-desktop-large@1x.png",
-            retina: "img/portfolio-item-desktop-large@2x.png"
-          }
-        },
+        img: "img/portfolio-item1.png",
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
       },
       {
-        title: "Сайт школы онлайн образования",
-        img: {
-          mobile: {
-            normal: "img/portfolio-item-mobile@1x.png",
-            retina: "img/portfolio-item-mobile@2x.png"
-          },
-          tablet: {
-            normal: "img/portfolio-item-tablet@1x.png",
-            retina: "img/portfolio-item-tablet@2x.png"
-          },
-          desktop: {
-            normal: "img/portfolio-item-desktop@1x.png",
-            retina: "img/portfolio-item-desktop@2x.png"
-          },
-          desktopLarge: {
-            normal: "img/portfolio-item-desktop-large@1x.png",
-            retina: "img/portfolio-item-desktop-large@2x.png"
-          }
-        },
+        title: "Сайт агентства интернет-решений",
+        img: "img/portfolio-item2.png",
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
       },
       {
-        title: "Сайт школы онлайн образования",
-        img: {
-          mobile: {
-            normal: "img/portfolio-item-mobile@1x.png",
-            retina: "img/portfolio-item-mobile@2x.png"
-          },
-          tablet: {
-            normal: "img/portfolio-item-tablet@1x.png",
-            retina: "img/portfolio-item-tablet@2x.png"
-          },
-          desktop: {
-            normal: "img/portfolio-item-desktop@1x.png",
-            retina: "img/portfolio-item-desktop@2x.png"
-          },
-          desktopLarge: {
-            normal: "img/portfolio-item-desktop-large@1x.png",
-            retina: "img/portfolio-item-desktop-large@2x.png"
-          }
-        },
+        title: "Портал видеоуроков и IT сообщество",
+        img: "img/portfolio-item3.png",
+        skills: ["HTML", "CSS", "Javascript"],
+        link: "#"
+      },
+      {
+        title: "Сайт йога-центра Atmayoga",
+        img: "img/portfolio-item4.png",
         skills: ["HTML", "CSS", "Javascript"],
         link: "#"
       }
@@ -125,21 +81,25 @@ block content
             each item in slider
               li.slider__item
                 .slider__picture
-                  picture
-                    source(media="(min-width: 1800px)", srcset=`${item.img.desktopLarge.normal} 1x, ${item.img.desktopLarge.retina} 2x`)
-                    source(media="(min-width: 1200px)", srcset=`${item.img.desktop.normal} 1x, ${item.img.desktop.retina} 2x`)
-                    source(media="(min-width: 768px)", srcset=`${item.img.tablet.normal} 1x, ${item.img.tablet.retina} 2x`)
-                    img.slider__image(src=`${item.img.mobile.normal}`, srcset=`${item.img.mobile.retina} 2x`, alt=`${item.title}`)
+                  img.slider__image(src=`${item.img}`, alt=`${item.title}`)
                 .slider__content
                   .slider__content-box
                     h3.slider__title.title.title--small.title--underlined #{item.title}
                     .slider__skills #{item.skills.join(", ")}
                     a.slider__link.button(href=`${item.link}`) Посмотреть сайт
         .portfolio__toggles
-          button.portfolio__toggles-item.portfolio__toggles-item--next
+          .portfolio__toggles-item.portfolio__toggles-item--previous
+            ul.portfolio__toggles-list.portfolio__toggles-list--previous
+              each item in slider
+                li.portfolio__toggles-picture
+                  img.portfolio__toggles-image.portfolio__toggles-image--previous(src=`${item.img}`, alt=`${item.title}`)
             svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
               use(xlink:href="img/sprite.svg#icon-portf_arrow_down")
-          button.portfolio__toggles-item.portfolio__toggles-item--previous
+          .portfolio__toggles-item.portfolio__toggles-item--next
+            ul.portfolio__toggles-list.portfolio__toggles-list--next
+              each item in slider
+                li.portfolio__toggles-picture
+                  img.portfolio__toggles-image.portfolio__toggles-image--previous(src=`${item.img}`, alt=`${item.title}`)
             svg.portfolio__toggles-icon(fill="#ffffff", width="43", height="27")
               use(xlink:href="img/sprite.svg#icon-portf_arrow_up")
     section.reviews
@@ -148,6 +108,7 @@ block content
         .reviews__articles
           each item in reviews
             article.reviews__item
+              h3.visually-hidden #{item.name}
               .reviews__picture
                 picture
                   source(media="(min-width: 768px)" srcset=`${item.img.tablet.normal} 1x, ${item.img.tablet.retina} 2x`)
