@@ -41,6 +41,7 @@
   color: rgba(#ffffff, 0.7);
   text-align: right;
 
+  &--active,
   &:hover {
     color: #ffffff;
   }
@@ -171,14 +172,10 @@
     color: #474b57;
     transition: color 0.3s;
 
+    &--active,
     &:hover {
       color: $darkBlue;
       padding-right: 17px;
-      border-right: 3px solid $blue;
-    }
-
-    &--active {
-      font-weight: bold;
       border-right: 3px solid $blue;
     }
   }
