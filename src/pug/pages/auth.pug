@@ -5,6 +5,16 @@ block variables
 
 block content
   section.auth
+    h1.visually-hidden Сайт - портфолио Андрея Иванова
+    .welcome__bg
+    .parallax.welcome__parallax
+      .parallax__layer.parallax__layer--background
+        video(autoplay="autoplay", loop="loop").parallax__video
+          source(src="video/night.mp4", type="video/mp4")
+      .parallax__layer.parallax__layer--mountain
+        img.parallax__image(src="img/mountain@1x.png", alt="mountain", width="1200", height="332")
+      .parallax__layer.parallax__layer--forest
+        img.parallax__image(src="img/forest@1x.png", alt="forest", width="1200", height="263")
     .container.auth__wrapper
       .auth__form-wrapper
         .auth__form.form
@@ -38,9 +48,4 @@ block content
       footer.auth-footer
         include ../common/copyright
         +copyright("index-footer__copyright")
-  .preloader
-    .preloader__animation
-      svg.preloader__icon(width="52.586", height="63.73", viewBox="0 0 52.586 63.73")
-        circle.preloader__circle(stroke="#ffffff", stroke-width="2.5864", stroke-miterlimit="10", cx="26.293", cy="37.438", r="25", fill="none")
-        circle.preloader__ball(cx="26.293", cy="4.5", r="4.5", fill="#ffffff")
-      .preloader__percents 100%
+  include ../common/preloader

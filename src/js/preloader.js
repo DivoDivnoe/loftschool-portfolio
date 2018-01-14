@@ -61,6 +61,8 @@ const preload = preloader => {
       preloader.style.display = 'none';
     });
   });
+
+  preloader.classList.remove('preloader--nojs');
 };
 
 export default preload;
