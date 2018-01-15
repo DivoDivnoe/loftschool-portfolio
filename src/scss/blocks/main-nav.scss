@@ -7,34 +7,33 @@
   display: block;
   visibility: hidden;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background-color: rgba(#253468, 0.87);
-    z-index: 100;
-  }
-
-  &::before {
-    left: 0;
-  }
-
-  &::after {
-    right: 0;
-  }
-
   &--opened {
     visibility: visible;
 
-    &::before,
-    &::after {
+    .main-nav__menu-left,
+    .main-nav__menu-right {
       width: 50%;
       transition: width 0.8s;
     }
   }
+}
+
+.main-nav__menu-left,
+.main-nav__menu-right {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(#253468, 0.87);
+  z-index: 100;
+}
+
+.main-nav__menu-left {
+  left: 0;
+}
+
+.main-nav__menu-right {
+  right: 0;
 }
 
 .main-nav__list {

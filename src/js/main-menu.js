@@ -15,6 +15,9 @@ const addMenuHandlers = menu => {
     menu.classList.add('main-nav__menu--opened');
     toggle.onclick = null;
 
+    [...menu.children].forEach(item =>
+      item.addEventListener('transitionend', appearMenuHandler)
+    );
     menu.addEventListener('transitionend', appearMenuHandler);
   };
 
