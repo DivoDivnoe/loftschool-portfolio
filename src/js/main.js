@@ -7,6 +7,7 @@ import preload from './preloader';
 import arrows from './arrows';
 import initSlider from './slider';
 import svg4everybody from './svg4everybody';
+import 'babel-polyfill';
 
 document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.main-nav__menu');

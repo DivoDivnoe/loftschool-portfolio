@@ -76,7 +76,7 @@ const initSlider = sliderElement => {
     next.removeEventListener('click', clickNextHandler);
     prev.removeEventListener('click', clickPrevHandler);
 
-    list.addEventListener('transitionend', () => {
+    list.addEventListener('transitionend', evt => {
       next.addEventListener('click', clickNextHandler);
       prev.addEventListener('click', clickPrevHandler);
     });
