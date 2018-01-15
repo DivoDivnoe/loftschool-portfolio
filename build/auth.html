@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Сайт портфолио</title><link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <section class="auth">
+        <h1 class="visually-hidden">Сайт - портфолио Андрея Иванова</h1>
+        <div class="welcome__bg"></div>
+        <div class="parallax welcome__parallax">
+          <div class="parallax__layer parallax__layer--background">
+            <video class="parallax__video" autoplay="autoplay" loop="loop">
+              <source src="video/night.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="parallax__layer parallax__layer--mountain"><img class="parallax__image" src="img/mountain@1x.png" alt="mountain" width="1200" height="332"></div>
+          <div class="parallax__layer parallax__layer--forest"><img class="parallax__image" src="img/forest@1x.png" alt="forest" width="1200" height="263"></div>
+        </div>
+        <div class="container auth__wrapper">
+          <div class="auth__form-wrapper">
+            <div class="auth__form form">
+              <h2 class="form__title">Авторизуйтесь</h2>
+              <form action="#">
+                <div class="form__field-wrapper">
+                  <input class="form__field" type="text" id="login" name="login" placeholder="Логин">
+                  <label class="form__field-picture" for="login">
+                    <svg class="form__field-icon" fill="#c4cbcd" width="14" height="15">
+                      <use xlink:href="img/sprite.svg#icon-login"></use>
+                    </svg>
+                  </label>
+                </div>
+                <div class="form__field-wrapper">
+                  <input class="form__field" type="text" id="password" name="password" placeholder="Пароль">
+                  <label class="form__field-picture" for="password">
+                    <svg class="form__field-icon" fill="#c4cbcd" width="17" height="16">
+                      <use xlink:href="img/sprite.svg#icon-password"></use>
+                    </svg>
+                  </label>
+                </div>
+                <div class="form__capture-wrapper">
+                  <input class="form__capture" type="checkbox" id="human" name="human" value="yes">
+                  <label class="form__capture-label" for="human">Я человек</label>
+                </div>
+                <div class="form__confirm-wrapper">
+                  <h3 class="form__confirm-title">Вы точно не робот?</h3>
+                  <div class="form__confirm-controls">
+                    <div class="form__confirm-item">
+                      <input class="form__confirm" type="radio" id="is-robot" name="not-robot" value="yes" checked>
+                      <label class="form__confirm-label" for="is-robot">Да</label>
+                    </div>
+                    <div class="form__confirm-item">
+                      <input class="form__confirm" type="radio" id="not-robot" name="not-robot" value="no">
+                      <label class="form__confirm-label" for="not-robot">Не уверен</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form__menu"><a class="form__menu-item button" href="index.html">На главную</a>
+                  <button class="form__menu-item form__menu-item--submit button" type="submit">Войти</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <footer class="auth-footer">
+                        <div class="index-footer__copyright copyright">
+                          <div class="container copyright__wrapper"><span class="copyright__item copyright__item--name">©  Андрей Иванов</span><span class="copyright__item copyright__item--description">создано с любовью в LoftSchool</span><span class="copyright__item copyright__item--year">2017</span></div>
+                        </div>
+          </footer>
+        </div>
+      </section>
+      <div class="preloader preloader--nojs">
+        <div class="preloader__animation">
+          <svg class="preloader__icon" width="52.586" height="63.73" viewBox="0 0 52.586 63.73">
+            <circle class="preloader__circle" stroke="#ffffff" stroke-width="2.5864" stroke-miterlimit="10" cx="26.293" cy="37.438" r="25" fill="none"></circle>
+          </svg>
+          <div class="preloader__percents">100%</div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
