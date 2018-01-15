@@ -1,17 +1,11 @@
 {
   "presets": [
-<<<<<<< HEAD
-    ["es2015"], {
-      modules: false
-    }
-=======
     [
       "es2015",
       {
         modules: false
       }
     ]
->>>>>>> 28c0c93c492d15f355692edb6e4e10da4f746c4a
   ],
   "comments": false
 }
