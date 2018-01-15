@@ -29,6 +29,26 @@
 .preloader__animation {
   position: relative;
   overflow: visible;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: white;
+    transform-origin: center 37.438px;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.04, 1.1);
+  }
 }
 
 .preloader__icon {
@@ -44,15 +64,6 @@
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
   z-index: 1000;
-}
-
-.preloader__ball {
-  transform-origin: center 37.438px;
-  animation-name: rotate;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.42, 0, 0.04, 1.1);
 }
 
 .preloader__percents {
