@@ -93,7 +93,6 @@ const login = form => {
 
   form.addEventListener('submit', evt => {
     evt.preventDefault();
-    console.log(elems);
 
     validate([...inputs], () => validateSuccess([...elems]), validateError);
   });
