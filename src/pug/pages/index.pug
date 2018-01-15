@@ -53,17 +53,19 @@ block content
                     a(class=`welcome-nav__link welcome-nav__link--${item.mod} button`, href=item.link) #{item.title}
           .welcome__form.form
             h2.form__title Авторизуйтесь
-            form(action="#")
+            form#form(action="#")
               .form__field-wrapper
                 input.form__field(type="text", id="login", name="login", placeholder="Логин")
                 label.form__field-picture(for="login")
                   svg.form__field-icon(fill="#c4cbcd", width="14", height="15")
                     use(xlink:href="img/sprite.svg#icon-login")
+                .form__field-error.popup-error Вы не ввели логин
               .form__field-wrapper
                 input.form__field(type="text", id="password" name="password", placeholder="Пароль")
                 label.form__field-picture(for="password")
                   svg.form__field-icon(fill="#c4cbcd", width="17", height="16")
                     use(xlink:href="img/sprite.svg#icon-password")
+                .form__field-error.popup-error Вы не ввели пароль
               .form__capture-wrapper
                 input.form__capture(type="checkbox", id="human", name="human", value="yes")
                 label.form__capture-label(for="human") Я человек
@@ -78,8 +80,8 @@ block content
                     label.form__confirm-label(for="not-robot") Не уверен
               .form__menu
                 a.form__menu-item.button(href="index.html") На главную
-                //button.form__menu-item.form__menu-item--submit.button(type="submit") Войти
-                a(href="admin.html").form__menu-item.form__menu-item--submit.button() Войти
+                button.form__menu-item.form__menu-item--submit.button(type="submit") Войти
       footer.welcome-footer
         include ../common/copyright
         +copyright("index-footer__copyright")
+  include ../common/preloader

@@ -1,0 +1,113 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #153365 url('../img/preloader-mobile@1x.jpg') no-repeat center;
+  background-size: cover;
+  opacity: 1;
+  transition: opacity 1.5s;
+  z-index: 1000;
+
+  &--nojs {
+    display: none;
+  }
+
+  &--closed {
+    opacity: 0;
+  }
+
+  @media (min-resolution: $retina-dppx), (min-resolution: $retina-dppx) {
+    background-image: url('../img/preloader-mobile@2x.jpg');
+  }
+}
+
+.preloader__animation {
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: white;
+    transform-origin: center 37.438px;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.04, 1.1);
+  }
+}
+
+.preloader__icon {
+  overflow: visible;
+}
+
+.preloader__circle {
+  position: relative;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  z-index: 1000;
+}
+
+.preloader__percents {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  from {
+    stroke-dasharray: 0 164;
+  }
+  to {
+    stroke-dasharray: 164 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .preloader {
+    background-image: url('../img/preloader-tablet@1x.jpg');
+
+    @media (min-resolution: $retina-dppx), (min-resolution: $retina-dppx) {
+      background-image: url('../img/preloader-tablet@2x.jpg');
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .preloader {
+    background-image: url('../img/preloader-desktop@1x.jpg');
+
+    @media (min-resolution: $retina-dppx), (min-resolution: $retina-dppx) {
+      background-image: url('../img/preloader-desktop@2x.jpg');
+    }
+  }
+}

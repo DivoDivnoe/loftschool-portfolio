@@ -34,7 +34,16 @@
 
 .contact-form__field-wrapper,
 .contact-form__message-wrapper {
+  position: relative;
   margin-bottom: 20px;
+
+  &--error {
+    outline: 1px solid #e44845;
+
+    .contact-form__field-error {
+      visibility: visible;
+    }
+  }
 }
 
 .contact-form__field,
@@ -59,6 +68,13 @@
   height: 140px;
   padding: 15px 20px;
   resize: none;
+}
+
+.contact-form__field-error {
+  position: absolute;
+  bottom: -15px;
+  left: 45px;
+  transform: translateY(100%);
 }
 
 .contact-form__buttons {

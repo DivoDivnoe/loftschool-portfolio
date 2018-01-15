@@ -41,6 +41,7 @@
   color: rgba(#ffffff, 0.7);
   text-align: right;
 
+  &--active,
   &:hover {
     color: #ffffff;
   }
@@ -85,6 +86,16 @@
   p {
     margin: 9px 0;
     line-height: calc(21 / 14);
+
+    a {
+      font-weight: 500;
+      color: blue;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   figure {
@@ -93,16 +104,6 @@
 
     img {
       max-width: initial;
-    }
-  }
-
-  a {
-    font-weight: 500;
-    color: blue;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
     }
   }
 }
@@ -171,14 +172,10 @@
     color: #474b57;
     transition: color 0.3s;
 
+    &--active,
     &:hover {
       color: $darkBlue;
       padding-right: 17px;
-      border-right: 3px solid $blue;
-    }
-
-    &--active {
-      font-weight: bold;
       border-right: 3px solid $blue;
     }
   }

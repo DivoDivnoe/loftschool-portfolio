@@ -37,6 +37,8 @@
 
 .contacts__map {
   display: block;
+  width: 100%;
+  border: none;
 }
 
 @media screen and (min-width: $tablet) {
